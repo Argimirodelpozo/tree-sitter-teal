@@ -1,0 +1,3529 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "teal",
+  "word": "label_identifier",
+  "rules": {
+    "source": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        }
+      ]
+    },
+    "_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "pragma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero_argument_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "single_numeric_argument_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "double_numeric_argument_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "explicit_simple_branch"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "multilabel_branch"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ecdsa_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ec_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mimc_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vrf_verify_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "asset_holding_get_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "asset_params_get_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "app_params_get_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "acct_params_get_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "voter_params_get_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "base64_decode_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "json_ref_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "intcblock_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bytecblock_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pushbytess_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pushints_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pushbytes_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "txn_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "txna_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "txnas_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "itxn_field_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "itxna_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "itxnas_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gitxnas_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gitxn_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gitxna_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxns_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxnsa_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxnas_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxnsas_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxn_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gtxna_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "global_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_opcode"
+        }
+      ]
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "//"
+          },
+          {
+            "type": "PATTERN",
+            "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
+          }
+        ]
+      }
+    },
+    "pragma": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#pragma"
+        },
+        {
+          "type": "STRING",
+          "value": "version"
+        },
+        {
+          "type": "FIELD",
+          "name": "version",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "label_identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][a-zA-Z0-9_\\-]*"
+    },
+    "label": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "label_identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        }
+      ]
+    },
+    "zero_argument_opcode": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sha256"
+        },
+        {
+          "type": "STRING",
+          "value": "keccak256"
+        },
+        {
+          "type": "STRING",
+          "value": "sha512_256"
+        },
+        {
+          "type": "STRING",
+          "value": "err"
+        },
+        {
+          "type": "STRING",
+          "value": "ed25519verify"
+        },
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "/"
+        },
+        {
+          "type": "STRING",
+          "value": "%"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "STRING",
+          "value": "<="
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        },
+        {
+          "type": "STRING",
+          "value": ">="
+        },
+        {
+          "type": "STRING",
+          "value": "&&"
+        },
+        {
+          "type": "STRING",
+          "value": "||"
+        },
+        {
+          "type": "STRING",
+          "value": "=="
+        },
+        {
+          "type": "STRING",
+          "value": "!="
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        },
+        {
+          "type": "STRING",
+          "value": "len"
+        },
+        {
+          "type": "STRING",
+          "value": "itob"
+        },
+        {
+          "type": "STRING",
+          "value": "btoi"
+        },
+        {
+          "type": "STRING",
+          "value": "&"
+        },
+        {
+          "type": "STRING",
+          "value": "|"
+        },
+        {
+          "type": "STRING",
+          "value": "^"
+        },
+        {
+          "type": "STRING",
+          "value": "~"
+        },
+        {
+          "type": "STRING",
+          "value": "mulw"
+        },
+        {
+          "type": "STRING",
+          "value": "addw"
+        },
+        {
+          "type": "STRING",
+          "value": "divmodw"
+        },
+        {
+          "type": "STRING",
+          "value": "intc_0"
+        },
+        {
+          "type": "STRING",
+          "value": "intc_1"
+        },
+        {
+          "type": "STRING",
+          "value": "intc_2"
+        },
+        {
+          "type": "STRING",
+          "value": "intc_3"
+        },
+        {
+          "type": "STRING",
+          "value": "bytec_0"
+        },
+        {
+          "type": "STRING",
+          "value": "bytec_1"
+        },
+        {
+          "type": "STRING",
+          "value": "bytec_2"
+        },
+        {
+          "type": "STRING",
+          "value": "bytec_3"
+        },
+        {
+          "type": "STRING",
+          "value": "arg_0"
+        },
+        {
+          "type": "STRING",
+          "value": "arg_1"
+        },
+        {
+          "type": "STRING",
+          "value": "arg_2"
+        },
+        {
+          "type": "STRING",
+          "value": "arg_3"
+        },
+        {
+          "type": "STRING",
+          "value": "gaids"
+        },
+        {
+          "type": "STRING",
+          "value": "loads"
+        },
+        {
+          "type": "STRING",
+          "value": "stores"
+        },
+        {
+          "type": "STRING",
+          "value": "return"
+        },
+        {
+          "type": "STRING",
+          "value": "assert"
+        },
+        {
+          "type": "STRING",
+          "value": "pop"
+        },
+        {
+          "type": "STRING",
+          "value": "dup"
+        },
+        {
+          "type": "STRING",
+          "value": "dup2"
+        },
+        {
+          "type": "STRING",
+          "value": "swap"
+        },
+        {
+          "type": "STRING",
+          "value": "select"
+        },
+        {
+          "type": "STRING",
+          "value": "concat"
+        },
+        {
+          "type": "STRING",
+          "value": "substring3"
+        },
+        {
+          "type": "STRING",
+          "value": "getbit"
+        },
+        {
+          "type": "STRING",
+          "value": "setbit"
+        },
+        {
+          "type": "STRING",
+          "value": "getbyte"
+        },
+        {
+          "type": "STRING",
+          "value": "setbyte"
+        },
+        {
+          "type": "STRING",
+          "value": "extract_uint16"
+        },
+        {
+          "type": "STRING",
+          "value": "extract_uint32"
+        },
+        {
+          "type": "STRING",
+          "value": "extract_uint64"
+        },
+        {
+          "type": "STRING",
+          "value": "replace3"
+        },
+        {
+          "type": "STRING",
+          "value": "balance"
+        },
+        {
+          "type": "STRING",
+          "value": "app_opted_in"
+        },
+        {
+          "type": "STRING",
+          "value": "app_local_get"
+        },
+        {
+          "type": "STRING",
+          "value": "app_local_get_ex"
+        },
+        {
+          "type": "STRING",
+          "value": "app_global_get"
+        },
+        {
+          "type": "STRING",
+          "value": "app_global_get_ex"
+        },
+        {
+          "type": "STRING",
+          "value": "app_local_put"
+        },
+        {
+          "type": "STRING",
+          "value": "app_global_put"
+        },
+        {
+          "type": "STRING",
+          "value": "app_local_del"
+        },
+        {
+          "type": "STRING",
+          "value": "app_global_del"
+        },
+        {
+          "type": "STRING",
+          "value": "online_stake"
+        },
+        {
+          "type": "STRING",
+          "value": "min_balance"
+        },
+        {
+          "type": "STRING",
+          "value": "ed25519verify_bare"
+        },
+        {
+          "type": "STRING",
+          "value": "retsub"
+        },
+        {
+          "type": "STRING",
+          "value": "shl"
+        },
+        {
+          "type": "STRING",
+          "value": "shr"
+        },
+        {
+          "type": "STRING",
+          "value": "sqrt"
+        },
+        {
+          "type": "STRING",
+          "value": "bitlen"
+        },
+        {
+          "type": "STRING",
+          "value": "exp"
+        },
+        {
+          "type": "STRING",
+          "value": "expw"
+        },
+        {
+          "type": "STRING",
+          "value": "bsqrt"
+        },
+        {
+          "type": "STRING",
+          "value": "divw"
+        },
+        {
+          "type": "STRING",
+          "value": "sha3_256"
+        },
+        {
+          "type": "STRING",
+          "value": "b+"
+        },
+        {
+          "type": "STRING",
+          "value": "b-"
+        },
+        {
+          "type": "STRING",
+          "value": "b/"
+        },
+        {
+          "type": "STRING",
+          "value": "b*"
+        },
+        {
+          "type": "STRING",
+          "value": "b<"
+        },
+        {
+          "type": "STRING",
+          "value": "b>"
+        },
+        {
+          "type": "STRING",
+          "value": "b<="
+        },
+        {
+          "type": "STRING",
+          "value": "b>="
+        },
+        {
+          "type": "STRING",
+          "value": "b=="
+        },
+        {
+          "type": "STRING",
+          "value": "b!="
+        },
+        {
+          "type": "STRING",
+          "value": "b%"
+        },
+        {
+          "type": "STRING",
+          "value": "b|"
+        },
+        {
+          "type": "STRING",
+          "value": "b&"
+        },
+        {
+          "type": "STRING",
+          "value": "b^"
+        },
+        {
+          "type": "STRING",
+          "value": "b~"
+        },
+        {
+          "type": "STRING",
+          "value": "bzero"
+        },
+        {
+          "type": "STRING",
+          "value": "log"
+        },
+        {
+          "type": "STRING",
+          "value": "itxn_begin"
+        },
+        {
+          "type": "STRING",
+          "value": "itxn_submit"
+        },
+        {
+          "type": "STRING",
+          "value": "itxn_next"
+        },
+        {
+          "type": "STRING",
+          "value": "box_create"
+        },
+        {
+          "type": "STRING",
+          "value": "box_extract"
+        },
+        {
+          "type": "STRING",
+          "value": "box_replace"
+        },
+        {
+          "type": "STRING",
+          "value": "box_del"
+        },
+        {
+          "type": "STRING",
+          "value": "box_len"
+        },
+        {
+          "type": "STRING",
+          "value": "box_get"
+        },
+        {
+          "type": "STRING",
+          "value": "box_put"
+        },
+        {
+          "type": "STRING",
+          "value": "args"
+        },
+        {
+          "type": "STRING",
+          "value": "gloadss"
+        },
+        {
+          "type": "STRING",
+          "value": "box_splice"
+        },
+        {
+          "type": "STRING",
+          "value": "box_resize"
+        }
+      ]
+    },
+    "ecdsa_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ecdsa_verify"
+            },
+            {
+              "type": "STRING",
+              "value": "ecdsa_pk_decompress"
+            },
+            {
+              "type": "STRING",
+              "value": "ecdsa_pk_recover"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Secp256k1"
+            },
+            {
+              "type": "STRING",
+              "value": "Secp256r1"
+            }
+          ]
+        }
+      ]
+    },
+    "ec_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ec_add"
+            },
+            {
+              "type": "STRING",
+              "value": "ec_scalar_mul"
+            },
+            {
+              "type": "STRING",
+              "value": "ec_pairing_check"
+            },
+            {
+              "type": "STRING",
+              "value": "ec_multi_scalar_mul"
+            },
+            {
+              "type": "STRING",
+              "value": "ec_subgroup_check"
+            },
+            {
+              "type": "STRING",
+              "value": "ec_map_to"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "BN254g1"
+            },
+            {
+              "type": "STRING",
+              "value": "BN254g2"
+            },
+            {
+              "type": "STRING",
+              "value": "BLS12_381g1"
+            },
+            {
+              "type": "STRING",
+              "value": "BLS12_381g2"
+            }
+          ]
+        }
+      ]
+    },
+    "mimc_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mimc"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "BN254Mp110"
+            },
+            {
+              "type": "STRING",
+              "value": "BLS12_381Mp111"
+            }
+          ]
+        }
+      ]
+    },
+    "asset_holding_get_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "asset_holding_get"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "AssetBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetFrozen"
+            }
+          ]
+        }
+      ]
+    },
+    "asset_params_get_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "asset_params_get"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "AssetTotal"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetDecimals"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetDefaultFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetUnitName"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetName"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetURL"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetMetadataHash"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetManager"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetReserve"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetFreeze"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetClawback"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetCreator"
+            }
+          ]
+        }
+      ]
+    },
+    "app_params_get_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "app_params_get"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "AppApprovalProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "AppClearStateProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "AppGlobalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "AppGlobalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "AppLocalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "AppLocalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "AppExtraProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "AppCreator"
+            },
+            {
+              "type": "STRING",
+              "value": "AppAddress"
+            }
+          ]
+        }
+      ]
+    },
+    "acct_params_get_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "acct_params_get"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "AcctBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctMinBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctAuthAddr"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalExtraAppPages"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalAppsCreated"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalAppsOptedIn"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalAssetsCreated"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalAssets"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalBoxes"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctTotalBoxBytes"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctIncentiveEligible"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctLastProposed"
+            },
+            {
+              "type": "STRING",
+              "value": "AcctLastHeartbeat"
+            }
+          ]
+        }
+      ]
+    },
+    "voter_params_get_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "voter_params_get"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "VoterBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "VoterIncentiveEligible"
+            }
+          ]
+        }
+      ]
+    },
+    "base64_decode_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "base64_decode"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "URLEncoding"
+            },
+            {
+              "type": "STRING",
+              "value": "StdEncoding"
+            }
+          ]
+        }
+      ]
+    },
+    "json_ref_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "json_ref"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "JSONString"
+            },
+            {
+              "type": "STRING",
+              "value": "JSONUint64"
+            },
+            {
+              "type": "STRING",
+              "value": "JSONObject"
+            }
+          ]
+        }
+      ]
+    },
+    "vrf_verify_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vrf_verify"
+        },
+        {
+          "type": "STRING",
+          "value": "VrfAlgorand"
+        }
+      ]
+    },
+    "intcblock_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "intcblock"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "bytecblock_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bytecblock"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "\\d+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\"[ -~]+\""
+              },
+              {
+                "type": "PATTERN",
+                "value": "0x[A-Fa-f0-9]*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "pushbytess_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pushbytess"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "\\d+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\"[ -~]+\""
+              },
+              {
+                "type": "PATTERN",
+                "value": "0x[A-Fa-f0-9]*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "single_numeric_argument_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "intc"
+            },
+            {
+              "type": "STRING",
+              "value": "bytec"
+            },
+            {
+              "type": "STRING",
+              "value": "arg"
+            },
+            {
+              "type": "STRING",
+              "value": "load"
+            },
+            {
+              "type": "STRING",
+              "value": "store"
+            },
+            {
+              "type": "STRING",
+              "value": "gloads"
+            },
+            {
+              "type": "STRING",
+              "value": "bury"
+            },
+            {
+              "type": "STRING",
+              "value": "popn"
+            },
+            {
+              "type": "STRING",
+              "value": "dupn"
+            },
+            {
+              "type": "STRING",
+              "value": "dig"
+            },
+            {
+              "type": "STRING",
+              "value": "cover"
+            },
+            {
+              "type": "STRING",
+              "value": "uncover"
+            },
+            {
+              "type": "STRING",
+              "value": "replace2"
+            },
+            {
+              "type": "STRING",
+              "value": "pushint"
+            },
+            {
+              "type": "STRING",
+              "value": "frame_dig"
+            },
+            {
+              "type": "STRING",
+              "value": "frame_bury"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "argument",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "pushints_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pushints"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "double_numeric_argument_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "extract"
+            },
+            {
+              "type": "STRING",
+              "value": "substring"
+            },
+            {
+              "type": "STRING",
+              "value": "gload"
+            },
+            {
+              "type": "STRING",
+              "value": "proto"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "argument_1",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "argument_2",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "explicit_simple_branch": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "b"
+            },
+            {
+              "type": "STRING",
+              "value": "bnz"
+            },
+            {
+              "type": "STRING",
+              "value": "bz"
+            },
+            {
+              "type": "STRING",
+              "value": "callsub"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label_identifier"
+        }
+      ]
+    },
+    "itxn_field_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "itxn"
+            },
+            {
+              "type": "STRING",
+              "value": "itxn_field"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Sender"
+            },
+            {
+              "type": "STRING",
+              "value": "Fee"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValid"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValidTime"
+            },
+            {
+              "type": "STRING",
+              "value": "LastValid"
+            },
+            {
+              "type": "STRING",
+              "value": "Note"
+            },
+            {
+              "type": "STRING",
+              "value": "Lease"
+            },
+            {
+              "type": "STRING",
+              "value": "Receiver"
+            },
+            {
+              "type": "STRING",
+              "value": "Amount"
+            },
+            {
+              "type": "STRING",
+              "value": "CloseRemainderTo"
+            },
+            {
+              "type": "STRING",
+              "value": "VotePK"
+            },
+            {
+              "type": "STRING",
+              "value": "SelectionPK"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteFirst"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteLast"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteKeyDilution"
+            },
+            {
+              "type": "STRING",
+              "value": "Type"
+            },
+            {
+              "type": "STRING",
+              "value": "TypeEnum"
+            },
+            {
+              "type": "STRING",
+              "value": "XferAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetAmount"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetSender"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetReceiver"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetCloseTo"
+            },
+            {
+              "type": "STRING",
+              "value": "GroupIndex"
+            },
+            {
+              "type": "STRING",
+              "value": "TxID"
+            },
+            {
+              "type": "STRING",
+              "value": "ApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "OnCompletion"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAppArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAccounts"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "RekeyTo"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetTotal"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDecimals"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDefaultFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetUnitName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetURL"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetMetadataHash"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetManager"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetReserve"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetFreeze"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetClawback"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetAccount"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAssets"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApplications"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "ExtraProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "Nonparticipation"
+            },
+            {
+              "type": "STRING",
+              "value": "NumLogs"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedAssetID"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "LastLog"
+            },
+            {
+              "type": "STRING",
+              "value": "StateProofPK"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "NumClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "itxna_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "itxna"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gitxn_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gitxn"
+        },
+        {
+          "type": "FIELD",
+          "name": "txn_group_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "Sender"
+            },
+            {
+              "type": "STRING",
+              "value": "Fee"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValid"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValidTime"
+            },
+            {
+              "type": "STRING",
+              "value": "LastValid"
+            },
+            {
+              "type": "STRING",
+              "value": "Note"
+            },
+            {
+              "type": "STRING",
+              "value": "Lease"
+            },
+            {
+              "type": "STRING",
+              "value": "Receiver"
+            },
+            {
+              "type": "STRING",
+              "value": "Amount"
+            },
+            {
+              "type": "STRING",
+              "value": "CloseRemainderTo"
+            },
+            {
+              "type": "STRING",
+              "value": "VotePK"
+            },
+            {
+              "type": "STRING",
+              "value": "SelectionPK"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteFirst"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteLast"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteKeyDilution"
+            },
+            {
+              "type": "STRING",
+              "value": "Type"
+            },
+            {
+              "type": "STRING",
+              "value": "TypeEnum"
+            },
+            {
+              "type": "STRING",
+              "value": "XferAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetAmount"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetSender"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetReceiver"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetCloseTo"
+            },
+            {
+              "type": "STRING",
+              "value": "GroupIndex"
+            },
+            {
+              "type": "STRING",
+              "value": "TxID"
+            },
+            {
+              "type": "STRING",
+              "value": "ApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "OnCompletion"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAppArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAccounts"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "RekeyTo"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetTotal"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDecimals"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDefaultFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetUnitName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetURL"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetMetadataHash"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetManager"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetReserve"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetFreeze"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetClawback"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetAccount"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAssets"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApplications"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "ExtraProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "Nonparticipation"
+            },
+            {
+              "type": "STRING",
+              "value": "NumLogs"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedAssetID"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "LastLog"
+            },
+            {
+              "type": "STRING",
+              "value": "StateProofPK"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "NumClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gitxna_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gitxna"
+        },
+        {
+          "type": "FIELD",
+          "name": "txn_group_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "array_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "multilabel_branch": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "switch"
+            },
+            {
+              "type": "STRING",
+              "value": "match"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "label_identifier"
+          }
+        }
+      ]
+    },
+    "txn_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "txn"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "Sender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Fee"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValidTime"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Note"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Lease"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Receiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Amount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CloseRemainderTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VotePK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "SelectionPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteFirst"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteLast"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteKeyDilution"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Type"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TypeEnum"
+                },
+                {
+                  "type": "STRING",
+                  "value": "XferAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetAmount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetSender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetReceiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetCloseTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GroupIndex"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TxID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "OnCompletion"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAppArgs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAccounts"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApprovalProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ClearStateProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "RekeyTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetTotal"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDecimals"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDefaultFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetUnitName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetURL"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetMetadataHash"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetManager"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetReserve"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetFreeze"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetClawback"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetAccount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAssets"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApplications"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ExtraProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Nonparticipation"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumLogs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedAssetID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastLog"
+                },
+                {
+                  "type": "STRING",
+                  "value": "StateProofPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApprovalProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumClearStateProgramPages"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "ApplicationArgs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Accounts"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Assets"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Applications"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Logs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ApprovalProgramPages"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ClearStateProgramPages"
+                    }
+                  ]
+                },
+                {
+                  "type": "FIELD",
+                  "name": "array_index",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\d+"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gtxns_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxns"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "Sender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Fee"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValidTime"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Note"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Lease"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Receiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Amount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CloseRemainderTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VotePK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "SelectionPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteFirst"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteLast"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteKeyDilution"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Type"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TypeEnum"
+                },
+                {
+                  "type": "STRING",
+                  "value": "XferAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetAmount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetSender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetReceiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetCloseTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GroupIndex"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TxID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "OnCompletion"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAppArgs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAccounts"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApprovalProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ClearStateProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "RekeyTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetTotal"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDecimals"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDefaultFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetUnitName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetURL"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetMetadataHash"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetManager"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetReserve"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetFreeze"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetClawback"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetAccount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAssets"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApplications"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ExtraProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Nonparticipation"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumLogs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedAssetID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastLog"
+                },
+                {
+                  "type": "STRING",
+                  "value": "StateProofPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApprovalProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumClearStateProgramPages"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "ApplicationArgs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Accounts"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Assets"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Applications"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Logs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ApprovalProgramPages"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ClearStateProgramPages"
+                    }
+                  ]
+                },
+                {
+                  "type": "FIELD",
+                  "name": "array_index",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\d+"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gtxnsa_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxnsa"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "array_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "txna_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "txna"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "array_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "txnas_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "txnas"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "itxnas_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "itxnas"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gitxnas_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gitxnas"
+        },
+        {
+          "type": "FIELD",
+          "name": "txn_group_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gtxnas_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxnas"
+        },
+        {
+          "type": "FIELD",
+          "name": "txn_group_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gtxnsas_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxnsas"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        }
+      ]
+    },
+    "gtxn_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxn"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\d+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "Sender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Fee"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FirstValidTime"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastValid"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Note"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Lease"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Receiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Amount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CloseRemainderTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VotePK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "SelectionPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteFirst"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteLast"
+                },
+                {
+                  "type": "STRING",
+                  "value": "VoteKeyDilution"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Type"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TypeEnum"
+                },
+                {
+                  "type": "STRING",
+                  "value": "XferAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetAmount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetSender"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetReceiver"
+                },
+                {
+                  "type": "STRING",
+                  "value": "AssetCloseTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GroupIndex"
+                },
+                {
+                  "type": "STRING",
+                  "value": "TxID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "OnCompletion"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAppArgs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAccounts"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ApprovalProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ClearStateProgram"
+                },
+                {
+                  "type": "STRING",
+                  "value": "RekeyTo"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetTotal"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDecimals"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetDefaultFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetUnitName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetName"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetURL"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetMetadataHash"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetManager"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetReserve"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetFreeze"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ConfigAssetClawback"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAsset"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetAccount"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FreezeAssetFrozen"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumAssets"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApplications"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "GlobalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumUint"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LocalNumByteSlice"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ExtraProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Nonparticipation"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumLogs"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedAssetID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "CreatedApplicationID"
+                },
+                {
+                  "type": "STRING",
+                  "value": "LastLog"
+                },
+                {
+                  "type": "STRING",
+                  "value": "StateProofPK"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumApprovalProgramPages"
+                },
+                {
+                  "type": "STRING",
+                  "value": "NumClearStateProgramPages"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "ApplicationArgs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Accounts"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Assets"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Applications"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "Logs"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ApprovalProgramPages"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ClearStateProgramPages"
+                    }
+                  ]
+                },
+                {
+                  "type": "FIELD",
+                  "name": "array_index",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\d+"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gtxna_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gtxna"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\d+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "ApplicationArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "Accounts"
+            },
+            {
+              "type": "STRING",
+              "value": "Assets"
+            },
+            {
+              "type": "STRING",
+              "value": "Applications"
+            },
+            {
+              "type": "STRING",
+              "value": "Logs"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgramPages"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "array_index",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        }
+      ]
+    },
+    "global_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "global"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "MinTxnFee"
+            },
+            {
+              "type": "STRING",
+              "value": "MinBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "MaxTxnLife"
+            },
+            {
+              "type": "STRING",
+              "value": "ZeroAddress"
+            },
+            {
+              "type": "STRING",
+              "value": "GroupSize"
+            },
+            {
+              "type": "STRING",
+              "value": "LogicSigVersion"
+            },
+            {
+              "type": "STRING",
+              "value": "Round"
+            },
+            {
+              "type": "STRING",
+              "value": "LatestTimestamp"
+            },
+            {
+              "type": "STRING",
+              "value": "CurrentApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatorAddress"
+            },
+            {
+              "type": "STRING",
+              "value": "CurrentApplicationAddress"
+            },
+            {
+              "type": "STRING",
+              "value": "GroupID"
+            },
+            {
+              "type": "STRING",
+              "value": "OpcodeBudget"
+            },
+            {
+              "type": "STRING",
+              "value": "CallerApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "CallerApplicationAddress"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetCreateMinBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetOptInMinBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "GenesisHash"
+            },
+            {
+              "type": "STRING",
+              "value": "PayoutsEnabled"
+            },
+            {
+              "type": "STRING",
+              "value": "PayoutsGoOnlineFee"
+            },
+            {
+              "type": "STRING",
+              "value": "PayoutsPercent"
+            },
+            {
+              "type": "STRING",
+              "value": "PayoutsMinBalance"
+            },
+            {
+              "type": "STRING",
+              "value": "PayoutsMaxBalance"
+            }
+          ]
+        }
+      ]
+    },
+    "pushbytes_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pushbytes"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\d+"
+            },
+            {
+              "type": "PATTERN",
+              "value": "\"[ -~]+\""
+            },
+            {
+              "type": "PATTERN",
+              "value": "0x[A-Fa-f0-9]*"
+            }
+          ]
+        }
+      ]
+    },
+    "block_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "BlkSeed"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkTimestamp"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkProposer"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkFeesCollected"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkBonus"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkBranch"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkFeeSink"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkProtocol"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkTxnCounter"
+            },
+            {
+              "type": "STRING",
+              "value": "BlkProposerPayout"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
+      "type": "PATTERN",
+      "value": "[\\s\\uFEFF\\u2060\\u200B\\u00A0]"
+    }
+  ],
+  "conflicts": [
+    [
+      "multilabel_branch"
+    ]
+  ],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

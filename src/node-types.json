@@ -1,0 +1,1774 @@
+[
+  {
+    "type": "acct_params_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "app_params_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "asset_holding_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "asset_params_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "base64_decode_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "block_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bytecblock_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "double_numeric_argument_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ec_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ecdsa_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "explicit_simple_branch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gitxn_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gitxna_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gitxnas_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "global_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxn_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxna_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxnas_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxns_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxnsa_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gtxnsas_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "intcblock_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "itxn_field_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "itxna_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "itxnas_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "json_ref_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "label_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mimc_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "multilabel_branch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pragma",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "pushbytes_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "pushbytess_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "pushints_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "single_numeric_argument_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "acct_params_get_opcode",
+          "named": true
+        },
+        {
+          "type": "app_params_get_opcode",
+          "named": true
+        },
+        {
+          "type": "asset_holding_get_opcode",
+          "named": true
+        },
+        {
+          "type": "asset_params_get_opcode",
+          "named": true
+        },
+        {
+          "type": "base64_decode_opcode",
+          "named": true
+        },
+        {
+          "type": "block_opcode",
+          "named": true
+        },
+        {
+          "type": "bytecblock_opcode",
+          "named": true
+        },
+        {
+          "type": "double_numeric_argument_opcode",
+          "named": true
+        },
+        {
+          "type": "ec_opcode",
+          "named": true
+        },
+        {
+          "type": "ecdsa_opcode",
+          "named": true
+        },
+        {
+          "type": "explicit_simple_branch",
+          "named": true
+        },
+        {
+          "type": "gitxn_opcode",
+          "named": true
+        },
+        {
+          "type": "gitxna_opcode",
+          "named": true
+        },
+        {
+          "type": "gitxnas_opcode",
+          "named": true
+        },
+        {
+          "type": "global_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxn_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxna_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxnas_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxns_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxnsa_opcode",
+          "named": true
+        },
+        {
+          "type": "gtxnsas_opcode",
+          "named": true
+        },
+        {
+          "type": "intcblock_opcode",
+          "named": true
+        },
+        {
+          "type": "itxn_field_opcode",
+          "named": true
+        },
+        {
+          "type": "itxna_opcode",
+          "named": true
+        },
+        {
+          "type": "itxnas_opcode",
+          "named": true
+        },
+        {
+          "type": "json_ref_opcode",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "mimc_opcode",
+          "named": true
+        },
+        {
+          "type": "multilabel_branch",
+          "named": true
+        },
+        {
+          "type": "pragma",
+          "named": true
+        },
+        {
+          "type": "pushbytes_opcode",
+          "named": true
+        },
+        {
+          "type": "pushbytess_opcode",
+          "named": true
+        },
+        {
+          "type": "pushints_opcode",
+          "named": true
+        },
+        {
+          "type": "single_numeric_argument_opcode",
+          "named": true
+        },
+        {
+          "type": "txn_opcode",
+          "named": true
+        },
+        {
+          "type": "txna_opcode",
+          "named": true
+        },
+        {
+          "type": "txnas_opcode",
+          "named": true
+        },
+        {
+          "type": "voter_params_get_opcode",
+          "named": true
+        },
+        {
+          "type": "vrf_verify_opcode",
+          "named": true
+        },
+        {
+          "type": "zero_argument_opcode",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "txn_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "txna_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "txnas_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "voter_params_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "vrf_verify_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "zero_argument_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "#pragma",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "Accounts",
+    "named": false
+  },
+  {
+    "type": "AcctAuthAddr",
+    "named": false
+  },
+  {
+    "type": "AcctBalance",
+    "named": false
+  },
+  {
+    "type": "AcctIncentiveEligible",
+    "named": false
+  },
+  {
+    "type": "AcctLastHeartbeat",
+    "named": false
+  },
+  {
+    "type": "AcctLastProposed",
+    "named": false
+  },
+  {
+    "type": "AcctMinBalance",
+    "named": false
+  },
+  {
+    "type": "AcctTotalAppsCreated",
+    "named": false
+  },
+  {
+    "type": "AcctTotalAppsOptedIn",
+    "named": false
+  },
+  {
+    "type": "AcctTotalAssets",
+    "named": false
+  },
+  {
+    "type": "AcctTotalAssetsCreated",
+    "named": false
+  },
+  {
+    "type": "AcctTotalBoxBytes",
+    "named": false
+  },
+  {
+    "type": "AcctTotalBoxes",
+    "named": false
+  },
+  {
+    "type": "AcctTotalExtraAppPages",
+    "named": false
+  },
+  {
+    "type": "AcctTotalNumByteSlice",
+    "named": false
+  },
+  {
+    "type": "AcctTotalNumUint",
+    "named": false
+  },
+  {
+    "type": "Amount",
+    "named": false
+  },
+  {
+    "type": "AppAddress",
+    "named": false
+  },
+  {
+    "type": "AppApprovalProgram",
+    "named": false
+  },
+  {
+    "type": "AppClearStateProgram",
+    "named": false
+  },
+  {
+    "type": "AppCreator",
+    "named": false
+  },
+  {
+    "type": "AppExtraProgramPages",
+    "named": false
+  },
+  {
+    "type": "AppGlobalNumByteSlice",
+    "named": false
+  },
+  {
+    "type": "AppGlobalNumUint",
+    "named": false
+  },
+  {
+    "type": "AppLocalNumByteSlice",
+    "named": false
+  },
+  {
+    "type": "AppLocalNumUint",
+    "named": false
+  },
+  {
+    "type": "ApplicationArgs",
+    "named": false
+  },
+  {
+    "type": "ApplicationID",
+    "named": false
+  },
+  {
+    "type": "Applications",
+    "named": false
+  },
+  {
+    "type": "ApprovalProgram",
+    "named": false
+  },
+  {
+    "type": "ApprovalProgramPages",
+    "named": false
+  },
+  {
+    "type": "AssetAmount",
+    "named": false
+  },
+  {
+    "type": "AssetBalance",
+    "named": false
+  },
+  {
+    "type": "AssetClawback",
+    "named": false
+  },
+  {
+    "type": "AssetCloseTo",
+    "named": false
+  },
+  {
+    "type": "AssetCreateMinBalance",
+    "named": false
+  },
+  {
+    "type": "AssetCreator",
+    "named": false
+  },
+  {
+    "type": "AssetDecimals",
+    "named": false
+  },
+  {
+    "type": "AssetDefaultFrozen",
+    "named": false
+  },
+  {
+    "type": "AssetFreeze",
+    "named": false
+  },
+  {
+    "type": "AssetFrozen",
+    "named": false
+  },
+  {
+    "type": "AssetManager",
+    "named": false
+  },
+  {
+    "type": "AssetMetadataHash",
+    "named": false
+  },
+  {
+    "type": "AssetName",
+    "named": false
+  },
+  {
+    "type": "AssetOptInMinBalance",
+    "named": false
+  },
+  {
+    "type": "AssetReceiver",
+    "named": false
+  },
+  {
+    "type": "AssetReserve",
+    "named": false
+  },
+  {
+    "type": "AssetSender",
+    "named": false
+  },
+  {
+    "type": "AssetTotal",
+    "named": false
+  },
+  {
+    "type": "AssetURL",
+    "named": false
+  },
+  {
+    "type": "AssetUnitName",
+    "named": false
+  },
+  {
+    "type": "Assets",
+    "named": false
+  },
+  {
+    "type": "BLS12_381Mp111",
+    "named": false
+  },
+  {
+    "type": "BLS12_381g1",
+    "named": false
+  },
+  {
+    "type": "BLS12_381g2",
+    "named": false
+  },
+  {
+    "type": "BN254Mp110",
+    "named": false
+  },
+  {
+    "type": "BN254g1",
+    "named": false
+  },
+  {
+    "type": "BN254g2",
+    "named": false
+  },
+  {
+    "type": "BlkBonus",
+    "named": false
+  },
+  {
+    "type": "BlkBranch",
+    "named": false
+  },
+  {
+    "type": "BlkFeeSink",
+    "named": false
+  },
+  {
+    "type": "BlkFeesCollected",
+    "named": false
+  },
+  {
+    "type": "BlkProposer",
+    "named": false
+  },
+  {
+    "type": "BlkProposerPayout",
+    "named": false
+  },
+  {
+    "type": "BlkProtocol",
+    "named": false
+  },
+  {
+    "type": "BlkSeed",
+    "named": false
+  },
+  {
+    "type": "BlkTimestamp",
+    "named": false
+  },
+  {
+    "type": "BlkTxnCounter",
+    "named": false
+  },
+  {
+    "type": "CallerApplicationAddress",
+    "named": false
+  },
+  {
+    "type": "CallerApplicationID",
+    "named": false
+  },
+  {
+    "type": "ClearStateProgram",
+    "named": false
+  },
+  {
+    "type": "ClearStateProgramPages",
+    "named": false
+  },
+  {
+    "type": "CloseRemainderTo",
+    "named": false
+  },
+  {
+    "type": "ConfigAsset",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetClawback",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetDecimals",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetDefaultFrozen",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetFreeze",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetManager",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetMetadataHash",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetName",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetReserve",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetTotal",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetURL",
+    "named": false
+  },
+  {
+    "type": "ConfigAssetUnitName",
+    "named": false
+  },
+  {
+    "type": "CreatedApplicationID",
+    "named": false
+  },
+  {
+    "type": "CreatedAssetID",
+    "named": false
+  },
+  {
+    "type": "CreatorAddress",
+    "named": false
+  },
+  {
+    "type": "CurrentApplicationAddress",
+    "named": false
+  },
+  {
+    "type": "CurrentApplicationID",
+    "named": false
+  },
+  {
+    "type": "ExtraProgramPages",
+    "named": false
+  },
+  {
+    "type": "Fee",
+    "named": false
+  },
+  {
+    "type": "FirstValid",
+    "named": false
+  },
+  {
+    "type": "FirstValidTime",
+    "named": false
+  },
+  {
+    "type": "FreezeAsset",
+    "named": false
+  },
+  {
+    "type": "FreezeAssetAccount",
+    "named": false
+  },
+  {
+    "type": "FreezeAssetFrozen",
+    "named": false
+  },
+  {
+    "type": "GenesisHash",
+    "named": false
+  },
+  {
+    "type": "GlobalNumByteSlice",
+    "named": false
+  },
+  {
+    "type": "GlobalNumUint",
+    "named": false
+  },
+  {
+    "type": "GroupID",
+    "named": false
+  },
+  {
+    "type": "GroupIndex",
+    "named": false
+  },
+  {
+    "type": "GroupSize",
+    "named": false
+  },
+  {
+    "type": "JSONObject",
+    "named": false
+  },
+  {
+    "type": "JSONString",
+    "named": false
+  },
+  {
+    "type": "JSONUint64",
+    "named": false
+  },
+  {
+    "type": "LastLog",
+    "named": false
+  },
+  {
+    "type": "LastValid",
+    "named": false
+  },
+  {
+    "type": "LatestTimestamp",
+    "named": false
+  },
+  {
+    "type": "Lease",
+    "named": false
+  },
+  {
+    "type": "LocalNumByteSlice",
+    "named": false
+  },
+  {
+    "type": "LocalNumUint",
+    "named": false
+  },
+  {
+    "type": "LogicSigVersion",
+    "named": false
+  },
+  {
+    "type": "Logs",
+    "named": false
+  },
+  {
+    "type": "MaxTxnLife",
+    "named": false
+  },
+  {
+    "type": "MinBalance",
+    "named": false
+  },
+  {
+    "type": "MinTxnFee",
+    "named": false
+  },
+  {
+    "type": "Nonparticipation",
+    "named": false
+  },
+  {
+    "type": "Note",
+    "named": false
+  },
+  {
+    "type": "NumAccounts",
+    "named": false
+  },
+  {
+    "type": "NumAppArgs",
+    "named": false
+  },
+  {
+    "type": "NumApplications",
+    "named": false
+  },
+  {
+    "type": "NumApprovalProgramPages",
+    "named": false
+  },
+  {
+    "type": "NumAssets",
+    "named": false
+  },
+  {
+    "type": "NumClearStateProgramPages",
+    "named": false
+  },
+  {
+    "type": "NumLogs",
+    "named": false
+  },
+  {
+    "type": "OnCompletion",
+    "named": false
+  },
+  {
+    "type": "OpcodeBudget",
+    "named": false
+  },
+  {
+    "type": "PayoutsEnabled",
+    "named": false
+  },
+  {
+    "type": "PayoutsGoOnlineFee",
+    "named": false
+  },
+  {
+    "type": "PayoutsMaxBalance",
+    "named": false
+  },
+  {
+    "type": "PayoutsMinBalance",
+    "named": false
+  },
+  {
+    "type": "PayoutsPercent",
+    "named": false
+  },
+  {
+    "type": "Receiver",
+    "named": false
+  },
+  {
+    "type": "RekeyTo",
+    "named": false
+  },
+  {
+    "type": "Round",
+    "named": false
+  },
+  {
+    "type": "Secp256k1",
+    "named": false
+  },
+  {
+    "type": "Secp256r1",
+    "named": false
+  },
+  {
+    "type": "SelectionPK",
+    "named": false
+  },
+  {
+    "type": "Sender",
+    "named": false
+  },
+  {
+    "type": "StateProofPK",
+    "named": false
+  },
+  {
+    "type": "StdEncoding",
+    "named": false
+  },
+  {
+    "type": "TxID",
+    "named": false
+  },
+  {
+    "type": "Type",
+    "named": false
+  },
+  {
+    "type": "TypeEnum",
+    "named": false
+  },
+  {
+    "type": "URLEncoding",
+    "named": false
+  },
+  {
+    "type": "VoteFirst",
+    "named": false
+  },
+  {
+    "type": "VoteKeyDilution",
+    "named": false
+  },
+  {
+    "type": "VoteLast",
+    "named": false
+  },
+  {
+    "type": "VotePK",
+    "named": false
+  },
+  {
+    "type": "VoterBalance",
+    "named": false
+  },
+  {
+    "type": "VoterIncentiveEligible",
+    "named": false
+  },
+  {
+    "type": "VrfAlgorand",
+    "named": false
+  },
+  {
+    "type": "XferAsset",
+    "named": false
+  },
+  {
+    "type": "ZeroAddress",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "acct_params_get",
+    "named": false
+  },
+  {
+    "type": "addw",
+    "named": false
+  },
+  {
+    "type": "app_global_del",
+    "named": false
+  },
+  {
+    "type": "app_global_get",
+    "named": false
+  },
+  {
+    "type": "app_global_get_ex",
+    "named": false
+  },
+  {
+    "type": "app_global_put",
+    "named": false
+  },
+  {
+    "type": "app_local_del",
+    "named": false
+  },
+  {
+    "type": "app_local_get",
+    "named": false
+  },
+  {
+    "type": "app_local_get_ex",
+    "named": false
+  },
+  {
+    "type": "app_local_put",
+    "named": false
+  },
+  {
+    "type": "app_opted_in",
+    "named": false
+  },
+  {
+    "type": "app_params_get",
+    "named": false
+  },
+  {
+    "type": "arg",
+    "named": false
+  },
+  {
+    "type": "arg_0",
+    "named": false
+  },
+  {
+    "type": "arg_1",
+    "named": false
+  },
+  {
+    "type": "arg_2",
+    "named": false
+  },
+  {
+    "type": "arg_3",
+    "named": false
+  },
+  {
+    "type": "args",
+    "named": false
+  },
+  {
+    "type": "assert",
+    "named": false
+  },
+  {
+    "type": "asset_holding_get",
+    "named": false
+  },
+  {
+    "type": "asset_params_get",
+    "named": false
+  },
+  {
+    "type": "b",
+    "named": false
+  },
+  {
+    "type": "b!=",
+    "named": false
+  },
+  {
+    "type": "b%",
+    "named": false
+  },
+  {
+    "type": "b&",
+    "named": false
+  },
+  {
+    "type": "b*",
+    "named": false
+  },
+  {
+    "type": "b+",
+    "named": false
+  },
+  {
+    "type": "b-",
+    "named": false
+  },
+  {
+    "type": "b/",
+    "named": false
+  },
+  {
+    "type": "b<",
+    "named": false
+  },
+  {
+    "type": "b<=",
+    "named": false
+  },
+  {
+    "type": "b==",
+    "named": false
+  },
+  {
+    "type": "b>",
+    "named": false
+  },
+  {
+    "type": "b>=",
+    "named": false
+  },
+  {
+    "type": "b^",
+    "named": false
+  },
+  {
+    "type": "balance",
+    "named": false
+  },
+  {
+    "type": "base64_decode",
+    "named": false
+  },
+  {
+    "type": "bitlen",
+    "named": false
+  },
+  {
+    "type": "block",
+    "named": false
+  },
+  {
+    "type": "bnz",
+    "named": false
+  },
+  {
+    "type": "box_create",
+    "named": false
+  },
+  {
+    "type": "box_del",
+    "named": false
+  },
+  {
+    "type": "box_extract",
+    "named": false
+  },
+  {
+    "type": "box_get",
+    "named": false
+  },
+  {
+    "type": "box_len",
+    "named": false
+  },
+  {
+    "type": "box_put",
+    "named": false
+  },
+  {
+    "type": "box_replace",
+    "named": false
+  },
+  {
+    "type": "box_resize",
+    "named": false
+  },
+  {
+    "type": "box_splice",
+    "named": false
+  },
+  {
+    "type": "bsqrt",
+    "named": false
+  },
+  {
+    "type": "btoi",
+    "named": false
+  },
+  {
+    "type": "bury",
+    "named": false
+  },
+  {
+    "type": "bytec",
+    "named": false
+  },
+  {
+    "type": "bytec_0",
+    "named": false
+  },
+  {
+    "type": "bytec_1",
+    "named": false
+  },
+  {
+    "type": "bytec_2",
+    "named": false
+  },
+  {
+    "type": "bytec_3",
+    "named": false
+  },
+  {
+    "type": "bytecblock",
+    "named": false
+  },
+  {
+    "type": "bz",
+    "named": false
+  },
+  {
+    "type": "bzero",
+    "named": false
+  },
+  {
+    "type": "b|",
+    "named": false
+  },
+  {
+    "type": "b~",
+    "named": false
+  },
+  {
+    "type": "callsub",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "concat",
+    "named": false
+  },
+  {
+    "type": "cover",
+    "named": false
+  },
+  {
+    "type": "dig",
+    "named": false
+  },
+  {
+    "type": "divmodw",
+    "named": false
+  },
+  {
+    "type": "divw",
+    "named": false
+  },
+  {
+    "type": "dup",
+    "named": false
+  },
+  {
+    "type": "dup2",
+    "named": false
+  },
+  {
+    "type": "dupn",
+    "named": false
+  },
+  {
+    "type": "ec_add",
+    "named": false
+  },
+  {
+    "type": "ec_map_to",
+    "named": false
+  },
+  {
+    "type": "ec_multi_scalar_mul",
+    "named": false
+  },
+  {
+    "type": "ec_pairing_check",
+    "named": false
+  },
+  {
+    "type": "ec_scalar_mul",
+    "named": false
+  },
+  {
+    "type": "ec_subgroup_check",
+    "named": false
+  },
+  {
+    "type": "ecdsa_pk_decompress",
+    "named": false
+  },
+  {
+    "type": "ecdsa_pk_recover",
+    "named": false
+  },
+  {
+    "type": "ecdsa_verify",
+    "named": false
+  },
+  {
+    "type": "ed25519verify",
+    "named": false
+  },
+  {
+    "type": "ed25519verify_bare",
+    "named": false
+  },
+  {
+    "type": "err",
+    "named": false
+  },
+  {
+    "type": "exp",
+    "named": false
+  },
+  {
+    "type": "expw",
+    "named": false
+  },
+  {
+    "type": "extract",
+    "named": false
+  },
+  {
+    "type": "extract_uint16",
+    "named": false
+  },
+  {
+    "type": "extract_uint32",
+    "named": false
+  },
+  {
+    "type": "extract_uint64",
+    "named": false
+  },
+  {
+    "type": "frame_bury",
+    "named": false
+  },
+  {
+    "type": "frame_dig",
+    "named": false
+  },
+  {
+    "type": "gaids",
+    "named": false
+  },
+  {
+    "type": "getbit",
+    "named": false
+  },
+  {
+    "type": "getbyte",
+    "named": false
+  },
+  {
+    "type": "gitxn",
+    "named": false
+  },
+  {
+    "type": "gitxna",
+    "named": false
+  },
+  {
+    "type": "gitxnas",
+    "named": false
+  },
+  {
+    "type": "gload",
+    "named": false
+  },
+  {
+    "type": "gloads",
+    "named": false
+  },
+  {
+    "type": "gloadss",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "gtxn",
+    "named": false
+  },
+  {
+    "type": "gtxna",
+    "named": false
+  },
+  {
+    "type": "gtxnas",
+    "named": false
+  },
+  {
+    "type": "gtxns",
+    "named": false
+  },
+  {
+    "type": "gtxnsa",
+    "named": false
+  },
+  {
+    "type": "gtxnsas",
+    "named": false
+  },
+  {
+    "type": "intc",
+    "named": false
+  },
+  {
+    "type": "intc_0",
+    "named": false
+  },
+  {
+    "type": "intc_1",
+    "named": false
+  },
+  {
+    "type": "intc_2",
+    "named": false
+  },
+  {
+    "type": "intc_3",
+    "named": false
+  },
+  {
+    "type": "intcblock",
+    "named": false
+  },
+  {
+    "type": "itob",
+    "named": false
+  },
+  {
+    "type": "itxn",
+    "named": false
+  },
+  {
+    "type": "itxn_begin",
+    "named": false
+  },
+  {
+    "type": "itxn_field",
+    "named": false
+  },
+  {
+    "type": "itxn_next",
+    "named": false
+  },
+  {
+    "type": "itxn_submit",
+    "named": false
+  },
+  {
+    "type": "itxna",
+    "named": false
+  },
+  {
+    "type": "itxnas",
+    "named": false
+  },
+  {
+    "type": "json_ref",
+    "named": false
+  },
+  {
+    "type": "keccak256",
+    "named": false
+  },
+  {
+    "type": "label_identifier",
+    "named": true
+  },
+  {
+    "type": "len",
+    "named": false
+  },
+  {
+    "type": "load",
+    "named": false
+  },
+  {
+    "type": "loads",
+    "named": false
+  },
+  {
+    "type": "log",
+    "named": false
+  },
+  {
+    "type": "match",
+    "named": false
+  },
+  {
+    "type": "mimc",
+    "named": false
+  },
+  {
+    "type": "min_balance",
+    "named": false
+  },
+  {
+    "type": "mulw",
+    "named": false
+  },
+  {
+    "type": "online_stake",
+    "named": false
+  },
+  {
+    "type": "pop",
+    "named": false
+  },
+  {
+    "type": "popn",
+    "named": false
+  },
+  {
+    "type": "proto",
+    "named": false
+  },
+  {
+    "type": "pushbytes",
+    "named": false
+  },
+  {
+    "type": "pushbytess",
+    "named": false
+  },
+  {
+    "type": "pushint",
+    "named": false
+  },
+  {
+    "type": "pushints",
+    "named": false
+  },
+  {
+    "type": "replace2",
+    "named": false
+  },
+  {
+    "type": "replace3",
+    "named": false
+  },
+  {
+    "type": "retsub",
+    "named": false
+  },
+  {
+    "type": "return",
+    "named": false
+  },
+  {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "setbit",
+    "named": false
+  },
+  {
+    "type": "setbyte",
+    "named": false
+  },
+  {
+    "type": "sha256",
+    "named": false
+  },
+  {
+    "type": "sha3_256",
+    "named": false
+  },
+  {
+    "type": "sha512_256",
+    "named": false
+  },
+  {
+    "type": "shl",
+    "named": false
+  },
+  {
+    "type": "shr",
+    "named": false
+  },
+  {
+    "type": "sqrt",
+    "named": false
+  },
+  {
+    "type": "store",
+    "named": false
+  },
+  {
+    "type": "stores",
+    "named": false
+  },
+  {
+    "type": "substring",
+    "named": false
+  },
+  {
+    "type": "substring3",
+    "named": false
+  },
+  {
+    "type": "swap",
+    "named": false
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "txn",
+    "named": false
+  },
+  {
+    "type": "txna",
+    "named": false
+  },
+  {
+    "type": "txnas",
+    "named": false
+  },
+  {
+    "type": "uncover",
+    "named": false
+  },
+  {
+    "type": "version",
+    "named": false
+  },
+  {
+    "type": "voter_params_get",
+    "named": false
+  },
+  {
+    "type": "vrf_verify",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
+    "named": false
+  },
+  {
+    "type": "~",
+    "named": false
+  }
+]
