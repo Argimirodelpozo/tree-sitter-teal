@@ -47,6 +47,3 @@ TEAL_tests/
 *.tar.gz
 *.tgz
 *.zip
-
-# Bindings
-bindings/
