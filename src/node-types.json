@@ -1440,6 +1440,10 @@
     "named": false
   },
   {
+    "type": "extract3",
+    "named": false
+  },
+  {
     "type": "extract_uint16",
     "named": false
   },

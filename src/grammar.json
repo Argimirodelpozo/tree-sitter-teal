@@ -487,6 +487,10 @@
         },
         {
           "type": "STRING",
+          "value": "extract3"
+        },
+        {
+          "type": "STRING",
           "value": "balance"
         },
         {

@@ -30,6 +30,7 @@ const ZERO_ARGUMENT_OPCODES = [
   "getbyte", "setbyte",
   "extract_uint16", "extract_uint32", "extract_uint64",
   "replace3",
+  "extract3",
   "balance",
   "app_opted_in", "app_local_get", "app_local_get_ex",
   "app_global_get", "app_global_get_ex",
