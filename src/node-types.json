@@ -20,6 +20,21 @@
     "fields": {}
   },
   {
+    "type": "b_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "base64_decode_opcode",
     "named": true,
     "fields": {}
@@ -30,9 +45,54 @@
     "fields": {}
   },
   {
+    "type": "bnz_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bytecblock_opcode",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "bz_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "callsub_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "double_numeric_argument_opcode",
@@ -48,21 +108,6 @@
     "type": "ecdsa_opcode",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "explicit_simple_branch",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "label_identifier",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "gitxn_opcode",
@@ -156,12 +201,7 @@
     }
   },
   {
-    "type": "mimc_opcode",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "multilabel_branch",
+    "type": "match_opcode",
     "named": true,
     "fields": {},
     "children": {
@@ -174,6 +214,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "mimc_opcode",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "pragma",
@@ -226,6 +271,10 @@
           "named": true
         },
         {
+          "type": "b_opcode",
+          "named": true
+        },
+        {
           "type": "base64_decode_opcode",
           "named": true
         },
@@ -234,7 +283,19 @@
           "named": true
         },
         {
+          "type": "bnz_opcode",
+          "named": true
+        },
+        {
           "type": "bytecblock_opcode",
+          "named": true
+        },
+        {
+          "type": "bz_opcode",
+          "named": true
+        },
+        {
+          "type": "callsub_opcode",
           "named": true
         },
         {
@@ -247,10 +308,6 @@
         },
         {
           "type": "ecdsa_opcode",
-          "named": true
-        },
-        {
-          "type": "explicit_simple_branch",
           "named": true
         },
         {
@@ -318,11 +375,11 @@
           "named": true
         },
         {
-          "type": "mimc_opcode",
+          "type": "match_opcode",
           "named": true
         },
         {
-          "type": "multilabel_branch",
+          "type": "mimc_opcode",
           "named": true
         },
         {
@@ -343,6 +400,10 @@
         },
         {
           "type": "single_numeric_argument_opcode",
+          "named": true
+        },
+        {
+          "type": "switch_opcode",
           "named": true
         },
         {
@@ -367,6 +428,21 @@
         },
         {
           "type": "zero_argument_opcode",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "switch_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "label_identifier",
           "named": true
         }
       ]

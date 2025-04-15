@@ -147,7 +147,7 @@ module.exports = grammar({
 
   // error for multilabel branch of the form e.g. 'switch switch label'
   conflicts: $ => [
-    [$.multilabel_branch]
+    [$.match_opcode], [$.switch_opcode]
   ],
 
   rules: {
@@ -164,8 +164,12 @@ module.exports = grammar({
       $.double_numeric_argument_opcode,
 
       //Branching instructions
-      $.explicit_simple_branch,
-      $.multilabel_branch,
+      $.b_opcode,
+      $.bz_opcode,
+      $.bnz_opcode,
+      $.callsub_opcode,
+      $.match_opcode,
+      $.switch_opcode,
 
       $.ecdsa_opcode,
       $.ec_opcode,
@@ -314,8 +318,23 @@ module.exports = grammar({
       field("argument_2", NUMBER)
     ),
 
-    explicit_simple_branch: $ => seq(
-      choice("b", "bnz", "bz", "callsub"),
+    b_opcode: $ => seq(
+      "b",
+      $.label_identifier
+    ),
+
+    bz_opcode: $ => seq(
+      "bz",
+      $.label_identifier
+    ),
+  
+    bnz_opcode: $ => seq(
+      "bnz",
+      $.label_identifier
+    ),
+    
+    callsub_opcode: $ => seq(
+      "callsub",
       $.label_identifier
     ),
 
@@ -342,8 +361,13 @@ module.exports = grammar({
       field("array_index", NUMBER)
     ),
 
-    multilabel_branch: $ => seq(
-      choice("switch", "match"),
+    match_opcode: $ => seq(
+      "match",
+      repeat1($.label_identifier)
+    ),
+
+    switch_opcode: $ => seq(
+      "switch",
       repeat1($.label_identifier)
     ),
 

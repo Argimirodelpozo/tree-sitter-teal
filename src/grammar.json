@@ -40,11 +40,27 @@
         },
         {
           "type": "SYMBOL",
-          "name": "explicit_simple_branch"
+          "name": "b_opcode"
         },
         {
           "type": "SYMBOL",
-          "name": "multilabel_branch"
+          "name": "bz_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bnz_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "callsub_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "match_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "switch_opcode"
         },
         {
           "type": "SYMBOL",
@@ -1324,29 +1340,51 @@
         }
       ]
     },
-    "explicit_simple_branch": {
+    "b_opcode": {
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "b"
-            },
-            {
-              "type": "STRING",
-              "value": "bnz"
-            },
-            {
-              "type": "STRING",
-              "value": "bz"
-            },
-            {
-              "type": "STRING",
-              "value": "callsub"
-            }
-          ]
+          "type": "STRING",
+          "value": "b"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label_identifier"
+        }
+      ]
+    },
+    "bz_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bz"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label_identifier"
+        }
+      ]
+    },
+    "bnz_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bnz"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label_identifier"
+        }
+      ]
+    },
+    "callsub_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "callsub"
         },
         {
           "type": "SYMBOL",
@@ -1987,21 +2025,28 @@
         }
       ]
     },
-    "multilabel_branch": {
+    "match_opcode": {
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "switch"
-            },
-            {
-              "type": "STRING",
-              "value": "match"
-            }
-          ]
+          "type": "STRING",
+          "value": "match"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "label_identifier"
+          }
+        }
+      ]
+    },
+    "switch_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "switch"
         },
         {
           "type": "REPEAT1",
@@ -3522,7 +3567,10 @@
   ],
   "conflicts": [
     [
-      "multilabel_branch"
+      "match_opcode"
+    ],
+    [
+      "switch_opcode"
     ]
   ],
   "precedences": [],
