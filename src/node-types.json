@@ -126,28 +126,6 @@
     "type": "ec_opcode",
     "named": true,
     "fields": {
-      "curve": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "BLS12_381g1",
-            "named": false
-          },
-          {
-            "type": "BLS12_381g2",
-            "named": false
-          },
-          {
-            "type": "BN254g1",
-            "named": false
-          },
-          {
-            "type": "BN254g2",
-            "named": false
-          }
-        ]
-      },
       "op": {
         "multiple": false,
         "required": true,

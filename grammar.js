@@ -242,7 +242,7 @@ module.exports = grammar({
     ec_opcode: $ => seq(
       field("op", choice("ec_add", "ec_scalar_mul", "ec_pairing_check", 
         "ec_multi_scalar_mul", "ec_subgroup_check", "ec_map_to")),
-      field("curve", choice("BN254g1", "BN254g2", "BLS12_381g1", "BLS12_381g2"))
+      choice("BN254g1", "BN254g2", "BLS12_381g1", "BLS12_381g2")
     ),
 
     mimc_opcode: $ => seq(

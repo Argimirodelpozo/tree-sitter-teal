@@ -803,29 +803,25 @@
           }
         },
         {
-          "type": "FIELD",
-          "name": "curve",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "BN254g1"
-              },
-              {
-                "type": "STRING",
-                "value": "BN254g2"
-              },
-              {
-                "type": "STRING",
-                "value": "BLS12_381g1"
-              },
-              {
-                "type": "STRING",
-                "value": "BLS12_381g2"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "BN254g1"
+            },
+            {
+              "type": "STRING",
+              "value": "BN254g2"
+            },
+            {
+              "type": "STRING",
+              "value": "BLS12_381g1"
+            },
+            {
+              "type": "STRING",
+              "value": "BLS12_381g2"
+            }
+          ]
         }
       ]
     },
