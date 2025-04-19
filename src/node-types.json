@@ -97,17 +97,112 @@
   {
     "type": "double_numeric_argument_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "extract",
+            "named": false
+          },
+          {
+            "type": "gload",
+            "named": false
+          },
+          {
+            "type": "proto",
+            "named": false
+          },
+          {
+            "type": "substring",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "ec_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "curve": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "BLS12_381g1",
+            "named": false
+          },
+          {
+            "type": "BLS12_381g2",
+            "named": false
+          },
+          {
+            "type": "BN254g1",
+            "named": false
+          },
+          {
+            "type": "BN254g2",
+            "named": false
+          }
+        ]
+      },
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ec_add",
+            "named": false
+          },
+          {
+            "type": "ec_map_to",
+            "named": false
+          },
+          {
+            "type": "ec_multi_scalar_mul",
+            "named": false
+          },
+          {
+            "type": "ec_pairing_check",
+            "named": false
+          },
+          {
+            "type": "ec_scalar_mul",
+            "named": false
+          },
+          {
+            "type": "ec_subgroup_check",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "ecdsa_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ecdsa_pk_decompress",
+            "named": false
+          },
+          {
+            "type": "ecdsa_pk_recover",
+            "named": false
+          },
+          {
+            "type": "ecdsa_verify",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gitxn_opcode",
@@ -166,6 +261,11 @@
   },
   {
     "type": "itxn_field_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "itxn_opcode",
     "named": true,
     "fields": {}
   },
@@ -243,7 +343,82 @@
   {
     "type": "single_numeric_argument_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arg",
+            "named": false
+          },
+          {
+            "type": "bury",
+            "named": false
+          },
+          {
+            "type": "bytec",
+            "named": false
+          },
+          {
+            "type": "cover",
+            "named": false
+          },
+          {
+            "type": "dig",
+            "named": false
+          },
+          {
+            "type": "dupn",
+            "named": false
+          },
+          {
+            "type": "frame_bury",
+            "named": false
+          },
+          {
+            "type": "frame_dig",
+            "named": false
+          },
+          {
+            "type": "gloads",
+            "named": false
+          },
+          {
+            "type": "int",
+            "named": false
+          },
+          {
+            "type": "intc",
+            "named": false
+          },
+          {
+            "type": "load",
+            "named": false
+          },
+          {
+            "type": "popn",
+            "named": false
+          },
+          {
+            "type": "pushint",
+            "named": false
+          },
+          {
+            "type": "replace2",
+            "named": false
+          },
+          {
+            "type": "store",
+            "named": false
+          },
+          {
+            "type": "uncover",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "source",
@@ -356,6 +531,10 @@
         },
         {
           "type": "itxn_field_opcode",
+          "named": true
+        },
+        {
+          "type": "itxn_opcode",
           "named": true
         },
         {

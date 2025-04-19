@@ -140,6 +140,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "itxn_opcode"
+        },
+        {
+          "type": "SYMBOL",
           "name": "itxn_field_opcode"
         },
         {
@@ -727,21 +731,25 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ecdsa_verify"
-            },
-            {
-              "type": "STRING",
-              "value": "ecdsa_pk_decompress"
-            },
-            {
-              "type": "STRING",
-              "value": "ecdsa_pk_recover"
-            }
-          ]
+          "type": "FIELD",
+          "name": "op",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "ecdsa_verify"
+              },
+              {
+                "type": "STRING",
+                "value": "ecdsa_pk_decompress"
+              },
+              {
+                "type": "STRING",
+                "value": "ecdsa_pk_recover"
+              }
+            ]
+          }
         },
         {
           "type": "CHOICE",
@@ -762,54 +770,62 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ec_add"
-            },
-            {
-              "type": "STRING",
-              "value": "ec_scalar_mul"
-            },
-            {
-              "type": "STRING",
-              "value": "ec_pairing_check"
-            },
-            {
-              "type": "STRING",
-              "value": "ec_multi_scalar_mul"
-            },
-            {
-              "type": "STRING",
-              "value": "ec_subgroup_check"
-            },
-            {
-              "type": "STRING",
-              "value": "ec_map_to"
-            }
-          ]
+          "type": "FIELD",
+          "name": "op",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "ec_add"
+              },
+              {
+                "type": "STRING",
+                "value": "ec_scalar_mul"
+              },
+              {
+                "type": "STRING",
+                "value": "ec_pairing_check"
+              },
+              {
+                "type": "STRING",
+                "value": "ec_multi_scalar_mul"
+              },
+              {
+                "type": "STRING",
+                "value": "ec_subgroup_check"
+              },
+              {
+                "type": "STRING",
+                "value": "ec_map_to"
+              }
+            ]
+          }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "BN254g1"
-            },
-            {
-              "type": "STRING",
-              "value": "BN254g2"
-            },
-            {
-              "type": "STRING",
-              "value": "BLS12_381g1"
-            },
-            {
-              "type": "STRING",
-              "value": "BLS12_381g2"
-            }
-          ]
+          "type": "FIELD",
+          "name": "curve",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "BN254g1"
+              },
+              {
+                "type": "STRING",
+                "value": "BN254g2"
+              },
+              {
+                "type": "STRING",
+                "value": "BLS12_381g1"
+              },
+              {
+                "type": "STRING",
+                "value": "BLS12_381g2"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1204,77 +1220,81 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "intc"
-            },
-            {
-              "type": "STRING",
-              "value": "bytec"
-            },
-            {
-              "type": "STRING",
-              "value": "arg"
-            },
-            {
-              "type": "STRING",
-              "value": "load"
-            },
-            {
-              "type": "STRING",
-              "value": "store"
-            },
-            {
-              "type": "STRING",
-              "value": "gloads"
-            },
-            {
-              "type": "STRING",
-              "value": "bury"
-            },
-            {
-              "type": "STRING",
-              "value": "popn"
-            },
-            {
-              "type": "STRING",
-              "value": "dupn"
-            },
-            {
-              "type": "STRING",
-              "value": "dig"
-            },
-            {
-              "type": "STRING",
-              "value": "cover"
-            },
-            {
-              "type": "STRING",
-              "value": "uncover"
-            },
-            {
-              "type": "STRING",
-              "value": "replace2"
-            },
-            {
-              "type": "STRING",
-              "value": "pushint"
-            },
-            {
-              "type": "STRING",
-              "value": "frame_dig"
-            },
-            {
-              "type": "STRING",
-              "value": "frame_bury"
-            },
-            {
-              "type": "STRING",
-              "value": "int"
-            }
-          ]
+          "type": "FIELD",
+          "name": "op",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "intc"
+              },
+              {
+                "type": "STRING",
+                "value": "bytec"
+              },
+              {
+                "type": "STRING",
+                "value": "arg"
+              },
+              {
+                "type": "STRING",
+                "value": "load"
+              },
+              {
+                "type": "STRING",
+                "value": "store"
+              },
+              {
+                "type": "STRING",
+                "value": "gloads"
+              },
+              {
+                "type": "STRING",
+                "value": "bury"
+              },
+              {
+                "type": "STRING",
+                "value": "popn"
+              },
+              {
+                "type": "STRING",
+                "value": "dupn"
+              },
+              {
+                "type": "STRING",
+                "value": "dig"
+              },
+              {
+                "type": "STRING",
+                "value": "cover"
+              },
+              {
+                "type": "STRING",
+                "value": "uncover"
+              },
+              {
+                "type": "STRING",
+                "value": "replace2"
+              },
+              {
+                "type": "STRING",
+                "value": "pushint"
+              },
+              {
+                "type": "STRING",
+                "value": "frame_dig"
+              },
+              {
+                "type": "STRING",
+                "value": "frame_bury"
+              },
+              {
+                "type": "STRING",
+                "value": "int"
+              }
+            ]
+          }
         },
         {
           "type": "FIELD",
@@ -1306,25 +1326,29 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "extract"
-            },
-            {
-              "type": "STRING",
-              "value": "substring"
-            },
-            {
-              "type": "STRING",
-              "value": "gload"
-            },
-            {
-              "type": "STRING",
-              "value": "proto"
-            }
-          ]
+          "type": "FIELD",
+          "name": "op",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "extract"
+              },
+              {
+                "type": "STRING",
+                "value": "substring"
+              },
+              {
+                "type": "STRING",
+                "value": "gload"
+              },
+              {
+                "type": "STRING",
+                "value": "proto"
+              }
+            ]
+          }
         },
         {
           "type": "FIELD",
@@ -1396,21 +1420,270 @@
         }
       ]
     },
-    "itxn_field_opcode": {
+    "itxn_opcode": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "STRING",
+          "value": "itxn"
+        },
         {
           "type": "CHOICE",
           "members": [
             {
               "type": "STRING",
-              "value": "itxn"
+              "value": "Sender"
             },
             {
               "type": "STRING",
-              "value": "itxn_field"
+              "value": "Fee"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValid"
+            },
+            {
+              "type": "STRING",
+              "value": "FirstValidTime"
+            },
+            {
+              "type": "STRING",
+              "value": "LastValid"
+            },
+            {
+              "type": "STRING",
+              "value": "Note"
+            },
+            {
+              "type": "STRING",
+              "value": "Lease"
+            },
+            {
+              "type": "STRING",
+              "value": "Receiver"
+            },
+            {
+              "type": "STRING",
+              "value": "Amount"
+            },
+            {
+              "type": "STRING",
+              "value": "CloseRemainderTo"
+            },
+            {
+              "type": "STRING",
+              "value": "VotePK"
+            },
+            {
+              "type": "STRING",
+              "value": "SelectionPK"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteFirst"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteLast"
+            },
+            {
+              "type": "STRING",
+              "value": "VoteKeyDilution"
+            },
+            {
+              "type": "STRING",
+              "value": "Type"
+            },
+            {
+              "type": "STRING",
+              "value": "TypeEnum"
+            },
+            {
+              "type": "STRING",
+              "value": "XferAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetAmount"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetSender"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetReceiver"
+            },
+            {
+              "type": "STRING",
+              "value": "AssetCloseTo"
+            },
+            {
+              "type": "STRING",
+              "value": "GroupIndex"
+            },
+            {
+              "type": "STRING",
+              "value": "TxID"
+            },
+            {
+              "type": "STRING",
+              "value": "ApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "OnCompletion"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAppArgs"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAccounts"
+            },
+            {
+              "type": "STRING",
+              "value": "ApprovalProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "ClearStateProgram"
+            },
+            {
+              "type": "STRING",
+              "value": "RekeyTo"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetTotal"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDecimals"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetDefaultFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetUnitName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetName"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetURL"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetMetadataHash"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetManager"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetReserve"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetFreeze"
+            },
+            {
+              "type": "STRING",
+              "value": "ConfigAssetClawback"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAsset"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetAccount"
+            },
+            {
+              "type": "STRING",
+              "value": "FreezeAssetFrozen"
+            },
+            {
+              "type": "STRING",
+              "value": "NumAssets"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApplications"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "GlobalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumUint"
+            },
+            {
+              "type": "STRING",
+              "value": "LocalNumByteSlice"
+            },
+            {
+              "type": "STRING",
+              "value": "ExtraProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "Nonparticipation"
+            },
+            {
+              "type": "STRING",
+              "value": "NumLogs"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedAssetID"
+            },
+            {
+              "type": "STRING",
+              "value": "CreatedApplicationID"
+            },
+            {
+              "type": "STRING",
+              "value": "LastLog"
+            },
+            {
+              "type": "STRING",
+              "value": "StateProofPK"
+            },
+            {
+              "type": "STRING",
+              "value": "NumApprovalProgramPages"
+            },
+            {
+              "type": "STRING",
+              "value": "NumClearStateProgramPages"
             }
           ]
+        }
+      ]
+    },
+    "itxn_field_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "itxn_field"
         },
         {
           "type": "CHOICE",

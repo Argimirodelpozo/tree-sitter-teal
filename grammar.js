@@ -197,6 +197,7 @@ module.exports = grammar({
       $.txn_opcode,
       $.txna_opcode,
       $.txnas_opcode,
+      $.itxn_opcode,
       $.itxn_field_opcode,
       $.itxna_opcode,
       $.itxnas_opcode,
@@ -234,14 +235,14 @@ module.exports = grammar({
     zero_argument_opcode: $ => choice(...ZERO_ARGUMENT_OPCODES),
 
     ecdsa_opcode: $ => seq(
-      choice("ecdsa_verify", "ecdsa_pk_decompress", "ecdsa_pk_recover"),
+      field("op", choice("ecdsa_verify", "ecdsa_pk_decompress", "ecdsa_pk_recover")),
       choice("Secp256k1", "Secp256r1")
     ),
 
     ec_opcode: $ => seq(
-      choice("ec_add", "ec_scalar_mul", "ec_pairing_check", 
-        "ec_multi_scalar_mul", "ec_subgroup_check", "ec_map_to"),
-      choice("BN254g1", "BN254g2", "BLS12_381g1", "BLS12_381g2")
+      field("op", choice("ec_add", "ec_scalar_mul", "ec_pairing_check", 
+        "ec_multi_scalar_mul", "ec_subgroup_check", "ec_map_to")),
+      field("curve", choice("BN254g1", "BN254g2", "BLS12_381g1", "BLS12_381g2"))
     ),
 
     mimc_opcode: $ => seq(
@@ -305,7 +306,7 @@ module.exports = grammar({
     ),
 
     single_numeric_argument_opcode: $ => seq(
-      choice(...SINGLE_NUMERIC_ARGUMENT_OPCODES),
+      field("op", choice(...SINGLE_NUMERIC_ARGUMENT_OPCODES)),
       field("argument", NUMBER)
     ),
 
@@ -315,7 +316,7 @@ module.exports = grammar({
     ),
 
     double_numeric_argument_opcode: $ => seq(
-      choice(...DOUBLE_NUMERIC_ARGUMENT_OPCODES),
+      field("op", choice(...DOUBLE_NUMERIC_ARGUMENT_OPCODES)),
       field("argument_1", NUMBER),
       field("argument_2", NUMBER)
     ),
@@ -340,8 +341,13 @@ module.exports = grammar({
       $.label_identifier
     ),
 
+    itxn_opcode: $ => seq(
+      "itxn",
+      choice(...TXN_FIELDS)
+    ),
+
     itxn_field_opcode: $ => seq(
-      choice("itxn", "itxn_field"),
+      "itxn_field",
       choice(...TXN_FIELDS)
     ),
 
