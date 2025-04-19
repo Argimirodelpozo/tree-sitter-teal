@@ -1269,6 +1269,10 @@
             {
               "type": "STRING",
               "value": "frame_bury"
+            },
+            {
+              "type": "STRING",
+              "value": "int"
             }
           ]
         },

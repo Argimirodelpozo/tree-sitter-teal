@@ -63,7 +63,9 @@ const SINGLE_NUMERIC_ARGUMENT_OPCODES = [
   "dig", "cover", "uncover",
   "replace2",
   "pushint",
-  "frame_dig", "frame_bury"
+  "frame_dig", "frame_bury",
+  //pseudo-opcode but included for completeness
+  "int"
 ];
 
 const DOUBLE_NUMERIC_ARGUMENT_OPCODES = [

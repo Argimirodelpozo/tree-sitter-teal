@@ -1604,6 +1604,10 @@
     "named": false
   },
   {
+    "type": "int",
+    "named": false
+  },
+  {
     "type": "intc",
     "named": false
   },
