@@ -401,9 +401,11 @@ module.exports = grammar({
       field("array_index", NUMBER)
     ),
 
+    _txna_field: $ => choice(...TXN_ARRAY_FIELDS),
+
     txna_opcode: $ => seq(
       "txna",
-      field("field", choice(...TXN_ARRAY_FIELDS)),
+      field("txna_field", $. _txna_field),
       field("index", NUMBER)
     ),
 
