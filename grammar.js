@@ -403,8 +403,8 @@ module.exports = grammar({
 
     txna_opcode: $ => seq(
       "txna",
-      field("array_field", choice(...TXN_ARRAY_FIELDS)),
-      field("array_index", NUMBER)
+      field("field", choice(...TXN_ARRAY_FIELDS)),
+      field("index", NUMBER)
     ),
 
     txnas_opcode: $ => seq(
