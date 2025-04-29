@@ -204,6 +204,10 @@
         }
       ]
     },
+    "_numeric_argument": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -1321,8 +1325,8 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "_numeric_argument"
           }
         }
       ]

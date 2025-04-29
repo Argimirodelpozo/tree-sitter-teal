@@ -217,6 +217,8 @@ module.exports = grammar({
       $.block_opcode,
     ),
 
+    _numeric_argument: _ => NUMBER,
+
     comment: (_) => token(seq("\/\/", /(\\(.|\r?\n)|[^\\\n])*/)),
 
     // TEAL pragmas (e.g., #pragma version 6)
@@ -314,7 +316,7 @@ module.exports = grammar({
 
     intc_opcode: $ => seq(
       "intc",
-      field("value", NUMBER)
+      field("value", $._numeric_argument)
     ),
 
     pushints_opcode: $ => seq(
