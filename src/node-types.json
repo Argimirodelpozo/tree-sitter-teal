@@ -233,6 +233,11 @@
     "fields": {}
   },
   {
+    "type": "intc_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "intcblock_opcode",
     "named": true,
     "fields": {}
@@ -364,10 +369,6 @@
           },
           {
             "type": "int",
-            "named": false
-          },
-          {
-            "type": "intc",
             "named": false
           },
           {
@@ -504,6 +505,10 @@
           "named": true
         },
         {
+          "type": "intc_opcode",
+          "named": true
+        },
+        {
           "type": "intcblock_opcode",
           "named": true
         },
@@ -613,7 +618,42 @@
   {
     "type": "txna_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "txna_field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "Accounts",
+            "named": false
+          },
+          {
+            "type": "ApplicationArgs",
+            "named": false
+          },
+          {
+            "type": "Applications",
+            "named": false
+          },
+          {
+            "type": "ApprovalProgramPages",
+            "named": false
+          },
+          {
+            "type": "Assets",
+            "named": false
+          },
+          {
+            "type": "ClearStateProgramPages",
+            "named": false
+          },
+          {
+            "type": "Logs",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "txnas_opcode",
@@ -1694,6 +1734,10 @@
   },
   {
     "type": "frame_dig",
+    "named": false
+  },
+  {
+    "type": "gaid",
     "named": false
   },
   {

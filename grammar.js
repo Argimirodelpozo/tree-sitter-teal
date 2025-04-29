@@ -20,6 +20,7 @@ const ZERO_ARGUMENT_OPCODES = [
   "bytec_0", "bytec_1", "bytec_2", "bytec_3",
   "arg_0", "arg_1", "arg_2", "arg_3",
   "gaids", "loads",
+  "gaid",
   "stores",
   "return",
   "assert",
@@ -51,10 +52,10 @@ const ZERO_ARGUMENT_OPCODES = [
   "box_len", "box_get", "box_put",
   "args", "gloadss",
   "box_splice", "box_resize",
-]
+];
 
 const SINGLE_NUMERIC_ARGUMENT_OPCODES = [
-  "intc", "bytec",
+  "bytec",
   "arg",
   "load", "store",
   "gloads",
@@ -163,6 +164,7 @@ module.exports = grammar({
       //Generic rules to catch most cases
       $.zero_argument_opcode,
       $.single_numeric_argument_opcode,
+      $.intc_opcode,
       $.double_numeric_argument_opcode,
 
       //Branching instructions
@@ -292,7 +294,7 @@ module.exports = grammar({
 
     intcblock_opcode: $ => seq(
       "intcblock",
-      repeat(NUMBER),
+      field("value", repeat(NUMBER)),
     ),
 
     bytecblock_opcode: $ => seq(
@@ -307,12 +309,17 @@ module.exports = grammar({
 
     single_numeric_argument_opcode: $ => seq(
       field("op", choice(...SINGLE_NUMERIC_ARGUMENT_OPCODES)),
-      field("argument", NUMBER)
+      field("value", NUMBER)
+    ),
+
+    intc_opcode: $ => seq(
+      "intc",
+      field("value", NUMBER)
     ),
 
     pushints_opcode: $ => seq(
       "pushints",
-      repeat(NUMBER)
+      field("value", repeat(NUMBER))
     ),
 
     double_numeric_argument_opcode: $ => seq(
