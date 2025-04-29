@@ -217,7 +217,7 @@ module.exports = grammar({
       $.block_opcode,
     ),
 
-    _numeric_argument: _ => NUMBER,
+    numeric_argument: (_) => NUMBER,
 
     comment: (_) => token(seq("\/\/", /(\\(.|\r?\n)|[^\\\n])*/)),
 
@@ -316,7 +316,7 @@ module.exports = grammar({
 
     intc_opcode: $ => seq(
       "intc",
-      field("value", $._numeric_argument)
+      field("value", $.numeric_argument)
     ),
 
     pushints_opcode: $ => seq(

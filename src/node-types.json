@@ -235,7 +235,18 @@
   {
     "type": "intc_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "intcblock_opcode",
@@ -300,6 +311,11 @@
   },
   {
     "type": "mimc_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "numeric_argument",
     "named": true,
     "fields": {}
   },
