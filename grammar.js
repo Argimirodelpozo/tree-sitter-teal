@@ -296,7 +296,7 @@ module.exports = grammar({
 
     intcblock_opcode: $ => seq(
       "intcblock",
-      field("value", repeat(NUMBER)),
+      field("value", repeat($.numeric_argument)),
     ),
 
     bytecblock_opcode: $ => seq(
