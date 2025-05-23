@@ -40,6 +40,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "load_opcode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "store_opcode"
+        },
+        {
+          "type": "SYMBOL",
           "name": "double_numeric_argument_opcode"
         },
         {
@@ -1163,8 +1171,8 @@
           "content": {
             "type": "REPEAT",
             "content": {
-              "type": "PATTERN",
-              "value": "\\d+"
+              "type": "SYMBOL",
+              "name": "numeric_argument"
             }
           }
         }
@@ -1247,14 +1255,6 @@
               },
               {
                 "type": "STRING",
-                "value": "load"
-              },
-              {
-                "type": "STRING",
-                "value": "store"
-              },
-              {
-                "type": "STRING",
                 "value": "gloads"
               },
               {
@@ -1308,8 +1308,8 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -1320,6 +1320,40 @@
         {
           "type": "STRING",
           "value": "intc"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "numeric_argument"
+          }
+        }
+      ]
+    },
+    "load_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "load"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "numeric_argument"
+          }
+        }
+      ]
+    },
+    "store_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "store"
         },
         {
           "type": "FIELD",

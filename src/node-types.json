@@ -251,7 +251,18 @@
   {
     "type": "intcblock_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "itxn_field_opcode",
@@ -288,6 +299,22 @@
         "types": [
           {
             "type": "label_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "load_opcode",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
             "named": true
           }
         ]
@@ -388,10 +415,6 @@
             "named": false
           },
           {
-            "type": "load",
-            "named": false
-          },
-          {
             "type": "popn",
             "named": false
           },
@@ -404,12 +427,18 @@
             "named": false
           },
           {
-            "type": "store",
-            "named": false
-          },
-          {
             "type": "uncover",
             "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
           }
         ]
       }
@@ -553,6 +582,10 @@
           "named": true
         },
         {
+          "type": "load_opcode",
+          "named": true
+        },
+        {
           "type": "match_opcode",
           "named": true
         },
@@ -578,6 +611,10 @@
         },
         {
           "type": "single_numeric_argument_opcode",
+          "named": true
+        },
+        {
+          "type": "store_opcode",
           "named": true
         },
         {
@@ -609,6 +646,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "store_opcode",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
