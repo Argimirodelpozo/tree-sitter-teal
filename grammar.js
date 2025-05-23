@@ -57,7 +57,7 @@ const ZERO_ARGUMENT_OPCODES = [
 const SINGLE_NUMERIC_ARGUMENT_OPCODES = [
   "bytec",
   "arg",
-  "load", "store",
+  // "load", "store",
   "gloads",
   "bury",
   "popn", "dupn",
@@ -165,6 +165,8 @@ module.exports = grammar({
       $.zero_argument_opcode,
       $.single_numeric_argument_opcode,
       $.intc_opcode,
+      $.load_opcode,
+      $.store_opcode,
       $.double_numeric_argument_opcode,
 
       //Branching instructions
@@ -316,6 +318,16 @@ module.exports = grammar({
 
     intc_opcode: $ => seq(
       "intc",
+      field("value", $.numeric_argument)
+    ),
+
+    load_opcode: $ => seq(
+      "load",
+      field("value", $.numeric_argument)
+    ),
+
+    store_opcode: $ => seq(
+      "store",
       field("value", $.numeric_argument)
     ),
 
