@@ -311,7 +311,7 @@ module.exports = grammar({
 
     single_numeric_argument_opcode: $ => seq(
       field("op", choice(...SINGLE_NUMERIC_ARGUMENT_OPCODES)),
-      field("value", NUMBER)
+      field("value", $.numeric_argument)
     ),
 
     intc_opcode: $ => seq(
