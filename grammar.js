@@ -57,7 +57,6 @@ const ZERO_ARGUMENT_OPCODES = [
 const SINGLE_NUMERIC_ARGUMENT_OPCODES = [
   "bytec",
   "arg",
-  // "load", "store",
   "gloads",
   "bury",
   "popn", "dupn",
