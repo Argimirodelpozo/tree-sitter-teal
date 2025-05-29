@@ -219,6 +219,8 @@ module.exports = grammar({
     ),
 
     numeric_argument: (_) => NUMBER,
+    string_argument: (_) => STRING,
+    hexbytes_argument: (_) => HEX_BYTES,
 
     comment: (_) => token(seq("\/\/", /(\\(.|\r?\n)|[^\\\n])*/)),
 
@@ -302,12 +304,12 @@ module.exports = grammar({
 
     bytecblock_opcode: $ => seq(
       "bytecblock",
-      repeat(choice(NUMBER, STRING, HEX_BYTES))
+      repeat(choice($.numeric_argument, $.string_argument, $.hexbytes_argument))
     ),
 
     pushbytess_opcode: $ => seq(
       "pushbytess",
-      repeat(choice(NUMBER, STRING, HEX_BYTES))
+      repeat(choice($.numeric_argument, $.string_argument, $.hexbytes_argument))
     ),
 
     single_numeric_argument_opcode: $ => seq(
@@ -332,13 +334,13 @@ module.exports = grammar({
 
     pushints_opcode: $ => seq(
       "pushints",
-      field("value", repeat(NUMBER))
+      field("value", repeat($.numeric_argument))
     ),
 
     double_numeric_argument_opcode: $ => seq(
       field("op", choice(...DOUBLE_NUMERIC_ARGUMENT_OPCODES)),
-      field("argument_1", NUMBER),
-      field("argument_2", NUMBER)
+      field("value_1", $.numeric_argument),
+      field("value_2", $.numeric_argument)
     ),
 
     b_opcode: $ => seq(
@@ -384,9 +386,9 @@ module.exports = grammar({
 
     gitxna_opcode: $ => seq(
       "gitxna",
-      field("txn_group_index", NUMBER),
+      field("txn_group_index", $.numeric_argument),
       choice(...TXN_ARRAY_FIELDS),
-      field("array_index", NUMBER)
+      field("array_index", $.numeric_argument)
     ),
 
     match_opcode: $ => seq(
@@ -403,7 +405,7 @@ module.exports = grammar({
       "txn",
       choice(
         choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("array_index", NUMBER))
+        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
       )
     ),
 
@@ -411,14 +413,14 @@ module.exports = grammar({
       "gtxns",
       choice(
         choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("array_index", NUMBER))
+        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
       )
     ),
 
     gtxnsa_opcode: $ => seq(
       "gtxnsa",
       choice(...TXN_ARRAY_FIELDS),
-      field("array_index", NUMBER)
+      field("index", $.numeric_argument)
     ),
 
     _txna_field: $ => choice(...TXN_ARRAY_FIELDS),
@@ -426,7 +428,7 @@ module.exports = grammar({
     txna_opcode: $ => seq(
       "txna",
       field("txna_field", $. _txna_field),
-      field("index", NUMBER)
+      field("index", $.numeric_argument)
     ),
 
     txnas_opcode: $ => seq(
@@ -441,13 +443,13 @@ module.exports = grammar({
 
     gitxnas_opcode: $ => seq(
       "gitxnas",
-      field("txn_group_index", NUMBER),
+      field("txn_group_index", $.numeric_argument),
       choice(...TXN_ARRAY_FIELDS),
     ),
 
     gtxnas_opcode: $ => seq(
       "gtxnas",
-      field("txn_group_index", NUMBER),
+      field("txn_group_index", $.numeric_argument),
       choice(...TXN_ARRAY_FIELDS),
     ),
 
@@ -461,15 +463,15 @@ module.exports = grammar({
       NUMBER,
       choice(
         choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("array_index", NUMBER))
+        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
       )
     ),
 
     gtxna_opcode: $ => seq(
       "gtxna",
-      NUMBER,
+      $.numeric_argument,
       choice(...TXN_ARRAY_FIELDS),
-      field("array_index", NUMBER)
+      field("index", $.numeric_argument)
     ),
 
     global_opcode: $ => seq(
@@ -479,7 +481,7 @@ module.exports = grammar({
 
     pushbytes_opcode: $ => seq(
       "pushbytes",
-      choice(NUMBER, STRING, HEX_BYTES)
+      field("value", choice($.numeric_argument, $.string_argument, $.hexbytes_argument))
     ),
 
     block_opcode: $ => seq(

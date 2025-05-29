@@ -62,7 +62,25 @@
   {
     "type": "bytecblock_opcode",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "hexbytes_argument",
+          "named": true
+        },
+        {
+          "type": "numeric_argument",
+          "named": true
+        },
+        {
+          "type": "string_argument",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bz_opcode",
@@ -117,6 +135,26 @@
           {
             "type": "substring",
             "named": false
+          }
+        ]
+      },
+      "value_1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
+      "value_2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
           }
         ]
       }
@@ -190,12 +228,44 @@
   {
     "type": "gitxna_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "array_index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
+      "txn_group_index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gitxnas_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "txn_group_index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "global_opcode",
@@ -205,27 +275,92 @@
   {
     "type": "gtxn_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gtxna_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "numeric_argument",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "gtxnas_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "txn_group_index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gtxns_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gtxnsa_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "gtxnsas_opcode",
@@ -354,17 +489,65 @@
   {
     "type": "pushbytes_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "hexbytes_argument",
+            "named": true
+          },
+          {
+            "type": "numeric_argument",
+            "named": true
+          },
+          {
+            "type": "string_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "pushbytess_opcode",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "hexbytes_argument",
+          "named": true
+        },
+        {
+          "type": "numeric_argument",
+          "named": true
+        },
+        {
+          "type": "string_argument",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "pushints_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "single_numeric_argument_opcode",
@@ -682,12 +865,33 @@
   {
     "type": "txn_opcode",
     "named": true,
-    "fields": {}
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "txna_opcode",
     "named": true,
     "fields": {
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
       "txna_field": {
         "multiple": false,
         "required": true,
@@ -1874,6 +2078,10 @@
     "named": false
   },
   {
+    "type": "hexbytes_argument",
+    "named": true
+  },
+  {
     "type": "int",
     "named": false
   },
@@ -2068,6 +2276,10 @@
   {
     "type": "stores",
     "named": false
+  },
+  {
+    "type": "string_argument",
+    "named": true
   },
   {
     "type": "substring",

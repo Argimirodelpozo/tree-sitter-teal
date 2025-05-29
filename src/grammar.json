@@ -216,6 +216,14 @@
       "type": "PATTERN",
       "value": "\\d+"
     },
+    "string_argument": {
+      "type": "PATTERN",
+      "value": "\"[ -~]+\""
+    },
+    "hexbytes_argument": {
+      "type": "PATTERN",
+      "value": "0x[A-Fa-f0-9]*"
+    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -1191,16 +1199,16 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "PATTERN",
-                "value": "\\d+"
+                "type": "SYMBOL",
+                "name": "numeric_argument"
               },
               {
-                "type": "PATTERN",
-                "value": "\"[ -~]+\""
+                "type": "SYMBOL",
+                "name": "string_argument"
               },
               {
-                "type": "PATTERN",
-                "value": "0x[A-Fa-f0-9]*"
+                "type": "SYMBOL",
+                "name": "hexbytes_argument"
               }
             ]
           }
@@ -1220,16 +1228,16 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "PATTERN",
-                "value": "\\d+"
+                "type": "SYMBOL",
+                "name": "numeric_argument"
               },
               {
-                "type": "PATTERN",
-                "value": "\"[ -~]+\""
+                "type": "SYMBOL",
+                "name": "string_argument"
               },
               {
-                "type": "PATTERN",
-                "value": "0x[A-Fa-f0-9]*"
+                "type": "SYMBOL",
+                "name": "hexbytes_argument"
               }
             ]
           }
@@ -1378,8 +1386,8 @@
           "content": {
             "type": "REPEAT",
             "content": {
-              "type": "PATTERN",
-              "value": "\\d+"
+              "type": "SYMBOL",
+              "name": "numeric_argument"
             }
           }
         }
@@ -1415,18 +1423,18 @@
         },
         {
           "type": "FIELD",
-          "name": "argument_1",
+          "name": "value_1",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         },
         {
           "type": "FIELD",
-          "name": "argument_2",
+          "name": "value_2",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -2318,8 +2326,8 @@
           "type": "FIELD",
           "name": "txn_group_index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         },
         {
@@ -2359,8 +2367,8 @@
           "type": "FIELD",
           "name": "array_index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -2694,10 +2702,10 @@
                 },
                 {
                   "type": "FIELD",
-                  "name": "array_index",
+                  "name": "index",
                   "content": {
-                    "type": "PATTERN",
-                    "value": "\\d+"
+                    "type": "SYMBOL",
+                    "name": "numeric_argument"
                   }
                 }
               ]
@@ -3003,10 +3011,10 @@
                 },
                 {
                   "type": "FIELD",
-                  "name": "array_index",
+                  "name": "index",
                   "content": {
-                    "type": "PATTERN",
-                    "value": "\\d+"
+                    "type": "SYMBOL",
+                    "name": "numeric_argument"
                   }
                 }
               ]
@@ -3057,10 +3065,10 @@
         },
         {
           "type": "FIELD",
-          "name": "array_index",
+          "name": "index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -3117,8 +3125,8 @@
           "type": "FIELD",
           "name": "index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -3218,8 +3226,8 @@
           "type": "FIELD",
           "name": "txn_group_index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         },
         {
@@ -3268,8 +3276,8 @@
           "type": "FIELD",
           "name": "txn_group_index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         },
         {
@@ -3650,10 +3658,10 @@
                 },
                 {
                   "type": "FIELD",
-                  "name": "array_index",
+                  "name": "index",
                   "content": {
-                    "type": "PATTERN",
-                    "value": "\\d+"
+                    "type": "SYMBOL",
+                    "name": "numeric_argument"
                   }
                 }
               ]
@@ -3670,8 +3678,8 @@
           "value": "gtxna"
         },
         {
-          "type": "PATTERN",
-          "value": "\\d+"
+          "type": "SYMBOL",
+          "name": "numeric_argument"
         },
         {
           "type": "CHOICE",
@@ -3708,10 +3716,10 @@
         },
         {
           "type": "FIELD",
-          "name": "array_index",
+          "name": "index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         }
       ]
@@ -3830,21 +3838,25 @@
           "value": "pushbytes"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "\\d+"
-            },
-            {
-              "type": "PATTERN",
-              "value": "\"[ -~]+\""
-            },
-            {
-              "type": "PATTERN",
-              "value": "0x[A-Fa-f0-9]*"
-            }
-          ]
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "numeric_argument"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "string_argument"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "hexbytes_argument"
+              }
+            ]
+          }
         }
       ]
     },
