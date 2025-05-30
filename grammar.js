@@ -221,6 +221,10 @@ module.exports = grammar({
     numeric_argument: (_) => NUMBER,
     string_argument: (_) => STRING,
     hexbytes_argument: (_) => HEX_BYTES,
+    _txn_field: $ => choice(...TXN_FIELDS),
+    _txna_field: $ => choice(...TXN_ARRAY_FIELDS),
+    _global_field: $ => choice(...GLOBAL_FIELDS),
+    _block_field: $ => choice(...BLOCK_FIELDS),
 
     comment: (_) => token(seq("\/\/", /(\\(.|\r?\n)|[^\\\n])*/)),
 
@@ -365,29 +369,29 @@ module.exports = grammar({
 
     itxn_opcode: $ => seq(
       "itxn",
-      choice(...TXN_FIELDS)
+      field("txn_field", $._txn_field),
     ),
 
     itxn_field_opcode: $ => seq(
       "itxn_field",
-      choice(...TXN_FIELDS)
+      field("txn_field", $._txn_field),
     ),
 
     itxna_opcode: $ => seq(
       "itxna",
-      choice(...TXN_ARRAY_FIELDS)
+      field("txn_array_field", $._txna_field),
     ),
 
     gitxn_opcode: $ => seq(
       "gitxn",
-      field("txn_group_index", NUMBER),
-      choice(...TXN_FIELDS)
+      field("txn_group_index", $.numeric_argument),
+      field("txn_field", $._txn_field),
     ),
 
     gitxna_opcode: $ => seq(
       "gitxna",
       field("txn_group_index", $.numeric_argument),
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $._txna_field),
       field("array_index", $.numeric_argument)
     ),
 
@@ -404,79 +408,77 @@ module.exports = grammar({
     txn_opcode: $ => seq(
       "txn",
       choice(
-        choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
+        field("txn_field", $._txn_field),
+        seq(field("txn_array_field", $._txna_field), field("index", $.numeric_argument))
       )
     ),
 
     gtxns_opcode: $ => seq(
       "gtxns",
       choice(
-        choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
+        field("txn_field", $._txn_field),
+        seq(field("txn_array_field", $._txna_field), field("index", $.numeric_argument))
       )
     ),
 
     gtxnsa_opcode: $ => seq(
       "gtxnsa",
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $._txna_field),
       field("index", $.numeric_argument)
     ),
 
-    _txna_field: $ => choice(...TXN_ARRAY_FIELDS),
-
     txna_opcode: $ => seq(
       "txna",
-      field("txna_field", $. _txna_field),
+      field("txn_array_field", $. _txna_field),
       field("index", $.numeric_argument)
     ),
 
     txnas_opcode: $ => seq(
       "txnas",
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
     ),
 
     itxnas_opcode: $ => seq(
       "itxnas",
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
     ),
 
     gitxnas_opcode: $ => seq(
       "gitxnas",
       field("txn_group_index", $.numeric_argument),
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
     ),
 
     gtxnas_opcode: $ => seq(
       "gtxnas",
       field("txn_group_index", $.numeric_argument),
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
     ),
 
     gtxnsas_opcode: $ => seq(
       "gtxnsas",
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
     ),
 
     gtxn_opcode: $ => seq(
       "gtxn",
-      NUMBER,
+      $.numeric_argument,
       choice(
-        choice(...TXN_FIELDS),
-        seq(choice(...TXN_ARRAY_FIELDS), field("index", $.numeric_argument))
+        field("txn_field", $. _txn_field),
+        seq(field("txn_array_field", $. _txna_field), field("index", $.numeric_argument))
       )
     ),
 
     gtxna_opcode: $ => seq(
       "gtxna",
       $.numeric_argument,
-      choice(...TXN_ARRAY_FIELDS),
+      field("txn_array_field", $. _txna_field),
       field("index", $.numeric_argument)
     ),
 
     global_opcode: $ => seq(
       "global",
-      choice(...GLOBAL_FIELDS)
+      field("global_field", $._global_field)
     ),
 
     pushbytes_opcode: $ => seq(
@@ -486,7 +488,7 @@ module.exports = grammar({
 
     block_opcode: $ => seq(
       "block",
-      choice(...BLOCK_FIELDS)
+      field("block_field", $._block_field)
     ),
   }
 });

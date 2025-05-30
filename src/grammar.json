@@ -224,6 +224,430 @@
       "type": "PATTERN",
       "value": "0x[A-Fa-f0-9]*"
     },
+    "_txn_field": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Sender"
+        },
+        {
+          "type": "STRING",
+          "value": "Fee"
+        },
+        {
+          "type": "STRING",
+          "value": "FirstValid"
+        },
+        {
+          "type": "STRING",
+          "value": "FirstValidTime"
+        },
+        {
+          "type": "STRING",
+          "value": "LastValid"
+        },
+        {
+          "type": "STRING",
+          "value": "Note"
+        },
+        {
+          "type": "STRING",
+          "value": "Lease"
+        },
+        {
+          "type": "STRING",
+          "value": "Receiver"
+        },
+        {
+          "type": "STRING",
+          "value": "Amount"
+        },
+        {
+          "type": "STRING",
+          "value": "CloseRemainderTo"
+        },
+        {
+          "type": "STRING",
+          "value": "VotePK"
+        },
+        {
+          "type": "STRING",
+          "value": "SelectionPK"
+        },
+        {
+          "type": "STRING",
+          "value": "VoteFirst"
+        },
+        {
+          "type": "STRING",
+          "value": "VoteLast"
+        },
+        {
+          "type": "STRING",
+          "value": "VoteKeyDilution"
+        },
+        {
+          "type": "STRING",
+          "value": "Type"
+        },
+        {
+          "type": "STRING",
+          "value": "TypeEnum"
+        },
+        {
+          "type": "STRING",
+          "value": "XferAsset"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetAmount"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetSender"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetReceiver"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetCloseTo"
+        },
+        {
+          "type": "STRING",
+          "value": "GroupIndex"
+        },
+        {
+          "type": "STRING",
+          "value": "TxID"
+        },
+        {
+          "type": "STRING",
+          "value": "ApplicationID"
+        },
+        {
+          "type": "STRING",
+          "value": "OnCompletion"
+        },
+        {
+          "type": "STRING",
+          "value": "NumAppArgs"
+        },
+        {
+          "type": "STRING",
+          "value": "NumAccounts"
+        },
+        {
+          "type": "STRING",
+          "value": "ApprovalProgram"
+        },
+        {
+          "type": "STRING",
+          "value": "ClearStateProgram"
+        },
+        {
+          "type": "STRING",
+          "value": "RekeyTo"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAsset"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetTotal"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetDecimals"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetDefaultFrozen"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetUnitName"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetName"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetURL"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetMetadataHash"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetManager"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetReserve"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetFreeze"
+        },
+        {
+          "type": "STRING",
+          "value": "ConfigAssetClawback"
+        },
+        {
+          "type": "STRING",
+          "value": "FreezeAsset"
+        },
+        {
+          "type": "STRING",
+          "value": "FreezeAssetAccount"
+        },
+        {
+          "type": "STRING",
+          "value": "FreezeAssetFrozen"
+        },
+        {
+          "type": "STRING",
+          "value": "NumAssets"
+        },
+        {
+          "type": "STRING",
+          "value": "NumApplications"
+        },
+        {
+          "type": "STRING",
+          "value": "GlobalNumUint"
+        },
+        {
+          "type": "STRING",
+          "value": "GlobalNumByteSlice"
+        },
+        {
+          "type": "STRING",
+          "value": "LocalNumUint"
+        },
+        {
+          "type": "STRING",
+          "value": "LocalNumByteSlice"
+        },
+        {
+          "type": "STRING",
+          "value": "ExtraProgramPages"
+        },
+        {
+          "type": "STRING",
+          "value": "Nonparticipation"
+        },
+        {
+          "type": "STRING",
+          "value": "NumLogs"
+        },
+        {
+          "type": "STRING",
+          "value": "CreatedAssetID"
+        },
+        {
+          "type": "STRING",
+          "value": "CreatedApplicationID"
+        },
+        {
+          "type": "STRING",
+          "value": "LastLog"
+        },
+        {
+          "type": "STRING",
+          "value": "StateProofPK"
+        },
+        {
+          "type": "STRING",
+          "value": "NumApprovalProgramPages"
+        },
+        {
+          "type": "STRING",
+          "value": "NumClearStateProgramPages"
+        }
+      ]
+    },
+    "_txna_field": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ApplicationArgs"
+        },
+        {
+          "type": "STRING",
+          "value": "Accounts"
+        },
+        {
+          "type": "STRING",
+          "value": "Assets"
+        },
+        {
+          "type": "STRING",
+          "value": "Applications"
+        },
+        {
+          "type": "STRING",
+          "value": "Logs"
+        },
+        {
+          "type": "STRING",
+          "value": "ApprovalProgramPages"
+        },
+        {
+          "type": "STRING",
+          "value": "ClearStateProgramPages"
+        }
+      ]
+    },
+    "_global_field": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "MinTxnFee"
+        },
+        {
+          "type": "STRING",
+          "value": "MinBalance"
+        },
+        {
+          "type": "STRING",
+          "value": "MaxTxnLife"
+        },
+        {
+          "type": "STRING",
+          "value": "ZeroAddress"
+        },
+        {
+          "type": "STRING",
+          "value": "GroupSize"
+        },
+        {
+          "type": "STRING",
+          "value": "LogicSigVersion"
+        },
+        {
+          "type": "STRING",
+          "value": "Round"
+        },
+        {
+          "type": "STRING",
+          "value": "LatestTimestamp"
+        },
+        {
+          "type": "STRING",
+          "value": "CurrentApplicationID"
+        },
+        {
+          "type": "STRING",
+          "value": "CreatorAddress"
+        },
+        {
+          "type": "STRING",
+          "value": "CurrentApplicationAddress"
+        },
+        {
+          "type": "STRING",
+          "value": "GroupID"
+        },
+        {
+          "type": "STRING",
+          "value": "OpcodeBudget"
+        },
+        {
+          "type": "STRING",
+          "value": "CallerApplicationID"
+        },
+        {
+          "type": "STRING",
+          "value": "CallerApplicationAddress"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetCreateMinBalance"
+        },
+        {
+          "type": "STRING",
+          "value": "AssetOptInMinBalance"
+        },
+        {
+          "type": "STRING",
+          "value": "GenesisHash"
+        },
+        {
+          "type": "STRING",
+          "value": "PayoutsEnabled"
+        },
+        {
+          "type": "STRING",
+          "value": "PayoutsGoOnlineFee"
+        },
+        {
+          "type": "STRING",
+          "value": "PayoutsPercent"
+        },
+        {
+          "type": "STRING",
+          "value": "PayoutsMinBalance"
+        },
+        {
+          "type": "STRING",
+          "value": "PayoutsMaxBalance"
+        }
+      ]
+    },
+    "_block_field": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "BlkSeed"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkTimestamp"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkProposer"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkFeesCollected"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkBonus"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkBranch"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkFeeSink"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkProtocol"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkTxnCounter"
+        },
+        {
+          "type": "STRING",
+          "value": "BlkProposerPayout"
+        }
+      ]
+    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -1499,253 +1923,12 @@
           "value": "itxn"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "Sender"
-            },
-            {
-              "type": "STRING",
-              "value": "Fee"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValid"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValidTime"
-            },
-            {
-              "type": "STRING",
-              "value": "LastValid"
-            },
-            {
-              "type": "STRING",
-              "value": "Note"
-            },
-            {
-              "type": "STRING",
-              "value": "Lease"
-            },
-            {
-              "type": "STRING",
-              "value": "Receiver"
-            },
-            {
-              "type": "STRING",
-              "value": "Amount"
-            },
-            {
-              "type": "STRING",
-              "value": "CloseRemainderTo"
-            },
-            {
-              "type": "STRING",
-              "value": "VotePK"
-            },
-            {
-              "type": "STRING",
-              "value": "SelectionPK"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteFirst"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteLast"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteKeyDilution"
-            },
-            {
-              "type": "STRING",
-              "value": "Type"
-            },
-            {
-              "type": "STRING",
-              "value": "TypeEnum"
-            },
-            {
-              "type": "STRING",
-              "value": "XferAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetAmount"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetSender"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetReceiver"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetCloseTo"
-            },
-            {
-              "type": "STRING",
-              "value": "GroupIndex"
-            },
-            {
-              "type": "STRING",
-              "value": "TxID"
-            },
-            {
-              "type": "STRING",
-              "value": "ApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "OnCompletion"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAppArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAccounts"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "RekeyTo"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetTotal"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDecimals"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDefaultFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetUnitName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetURL"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetMetadataHash"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetManager"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetReserve"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetFreeze"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetClawback"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetAccount"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAssets"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApplications"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "ExtraProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "Nonparticipation"
-            },
-            {
-              "type": "STRING",
-              "value": "NumLogs"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedAssetID"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "LastLog"
-            },
-            {
-              "type": "STRING",
-              "value": "StateProofPK"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "NumClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txn_field"
+          }
         }
       ]
     },
@@ -1757,253 +1940,12 @@
           "value": "itxn_field"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "Sender"
-            },
-            {
-              "type": "STRING",
-              "value": "Fee"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValid"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValidTime"
-            },
-            {
-              "type": "STRING",
-              "value": "LastValid"
-            },
-            {
-              "type": "STRING",
-              "value": "Note"
-            },
-            {
-              "type": "STRING",
-              "value": "Lease"
-            },
-            {
-              "type": "STRING",
-              "value": "Receiver"
-            },
-            {
-              "type": "STRING",
-              "value": "Amount"
-            },
-            {
-              "type": "STRING",
-              "value": "CloseRemainderTo"
-            },
-            {
-              "type": "STRING",
-              "value": "VotePK"
-            },
-            {
-              "type": "STRING",
-              "value": "SelectionPK"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteFirst"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteLast"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteKeyDilution"
-            },
-            {
-              "type": "STRING",
-              "value": "Type"
-            },
-            {
-              "type": "STRING",
-              "value": "TypeEnum"
-            },
-            {
-              "type": "STRING",
-              "value": "XferAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetAmount"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetSender"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetReceiver"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetCloseTo"
-            },
-            {
-              "type": "STRING",
-              "value": "GroupIndex"
-            },
-            {
-              "type": "STRING",
-              "value": "TxID"
-            },
-            {
-              "type": "STRING",
-              "value": "ApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "OnCompletion"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAppArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAccounts"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "RekeyTo"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetTotal"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDecimals"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDefaultFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetUnitName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetURL"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetMetadataHash"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetManager"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetReserve"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetFreeze"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetClawback"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetAccount"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAssets"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApplications"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "ExtraProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "Nonparticipation"
-            },
-            {
-              "type": "STRING",
-              "value": "NumLogs"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedAssetID"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "LastLog"
-            },
-            {
-              "type": "STRING",
-              "value": "StateProofPK"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "NumClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txn_field"
+          }
         }
       ]
     },
@@ -2015,37 +1957,12 @@
           "value": "itxna"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -2060,258 +1977,17 @@
           "type": "FIELD",
           "name": "txn_group_index",
           "content": {
-            "type": "PATTERN",
-            "value": "\\d+"
+            "type": "SYMBOL",
+            "name": "numeric_argument"
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "Sender"
-            },
-            {
-              "type": "STRING",
-              "value": "Fee"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValid"
-            },
-            {
-              "type": "STRING",
-              "value": "FirstValidTime"
-            },
-            {
-              "type": "STRING",
-              "value": "LastValid"
-            },
-            {
-              "type": "STRING",
-              "value": "Note"
-            },
-            {
-              "type": "STRING",
-              "value": "Lease"
-            },
-            {
-              "type": "STRING",
-              "value": "Receiver"
-            },
-            {
-              "type": "STRING",
-              "value": "Amount"
-            },
-            {
-              "type": "STRING",
-              "value": "CloseRemainderTo"
-            },
-            {
-              "type": "STRING",
-              "value": "VotePK"
-            },
-            {
-              "type": "STRING",
-              "value": "SelectionPK"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteFirst"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteLast"
-            },
-            {
-              "type": "STRING",
-              "value": "VoteKeyDilution"
-            },
-            {
-              "type": "STRING",
-              "value": "Type"
-            },
-            {
-              "type": "STRING",
-              "value": "TypeEnum"
-            },
-            {
-              "type": "STRING",
-              "value": "XferAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetAmount"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetSender"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetReceiver"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetCloseTo"
-            },
-            {
-              "type": "STRING",
-              "value": "GroupIndex"
-            },
-            {
-              "type": "STRING",
-              "value": "TxID"
-            },
-            {
-              "type": "STRING",
-              "value": "ApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "OnCompletion"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAppArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAccounts"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgram"
-            },
-            {
-              "type": "STRING",
-              "value": "RekeyTo"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetTotal"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDecimals"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetDefaultFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetUnitName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetName"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetURL"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetMetadataHash"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetManager"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetReserve"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetFreeze"
-            },
-            {
-              "type": "STRING",
-              "value": "ConfigAssetClawback"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAsset"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetAccount"
-            },
-            {
-              "type": "STRING",
-              "value": "FreezeAssetFrozen"
-            },
-            {
-              "type": "STRING",
-              "value": "NumAssets"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApplications"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "GlobalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumUint"
-            },
-            {
-              "type": "STRING",
-              "value": "LocalNumByteSlice"
-            },
-            {
-              "type": "STRING",
-              "value": "ExtraProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "Nonparticipation"
-            },
-            {
-              "type": "STRING",
-              "value": "NumLogs"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedAssetID"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatedApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "LastLog"
-            },
-            {
-              "type": "STRING",
-              "value": "StateProofPK"
-            },
-            {
-              "type": "STRING",
-              "value": "NumApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "NumClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txn_field"
+          }
         }
       ]
     },
@@ -2331,37 +2007,12 @@
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         },
         {
           "type": "FIELD",
@@ -2416,289 +2067,23 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "Sender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Fee"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValidTime"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Note"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Lease"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Receiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Amount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CloseRemainderTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VotePK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "SelectionPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteFirst"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteLast"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteKeyDilution"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Type"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TypeEnum"
-                },
-                {
-                  "type": "STRING",
-                  "value": "XferAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetAmount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetSender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetReceiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetCloseTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GroupIndex"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TxID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "OnCompletion"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAppArgs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAccounts"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApprovalProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ClearStateProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "RekeyTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetTotal"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDecimals"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDefaultFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetUnitName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetURL"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetMetadataHash"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetManager"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetReserve"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetFreeze"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetClawback"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetAccount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAssets"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApplications"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ExtraProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Nonparticipation"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumLogs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedAssetID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastLog"
-                },
-                {
-                  "type": "STRING",
-                  "value": "StateProofPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApprovalProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumClearStateProgramPages"
-                }
-              ]
+              "type": "FIELD",
+              "name": "txn_field",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_txn_field"
+              }
             },
             {
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "ApplicationArgs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Accounts"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Assets"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Applications"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Logs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ApprovalProgramPages"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ClearStateProgramPages"
-                    }
-                  ]
+                  "type": "FIELD",
+                  "name": "txn_array_field",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_txna_field"
+                  }
                 },
                 {
                   "type": "FIELD",
@@ -2725,289 +2110,23 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "Sender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Fee"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValidTime"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Note"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Lease"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Receiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Amount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CloseRemainderTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VotePK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "SelectionPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteFirst"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteLast"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteKeyDilution"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Type"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TypeEnum"
-                },
-                {
-                  "type": "STRING",
-                  "value": "XferAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetAmount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetSender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetReceiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetCloseTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GroupIndex"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TxID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "OnCompletion"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAppArgs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAccounts"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApprovalProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ClearStateProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "RekeyTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetTotal"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDecimals"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDefaultFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetUnitName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetURL"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetMetadataHash"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetManager"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetReserve"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetFreeze"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetClawback"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetAccount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAssets"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApplications"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ExtraProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Nonparticipation"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumLogs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedAssetID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastLog"
-                },
-                {
-                  "type": "STRING",
-                  "value": "StateProofPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApprovalProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumClearStateProgramPages"
-                }
-              ]
+              "type": "FIELD",
+              "name": "txn_field",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_txn_field"
+              }
             },
             {
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "ApplicationArgs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Accounts"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Assets"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Applications"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Logs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ApprovalProgramPages"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ClearStateProgramPages"
-                    }
-                  ]
+                  "type": "FIELD",
+                  "name": "txn_array_field",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_txna_field"
+                  }
                 },
                 {
                   "type": "FIELD",
@@ -3031,37 +2150,12 @@
           "value": "gtxnsa"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         },
         {
           "type": "FIELD",
@@ -3070,39 +2164,6 @@
             "type": "SYMBOL",
             "name": "numeric_argument"
           }
-        }
-      ]
-    },
-    "_txna_field": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "ApplicationArgs"
-        },
-        {
-          "type": "STRING",
-          "value": "Accounts"
-        },
-        {
-          "type": "STRING",
-          "value": "Assets"
-        },
-        {
-          "type": "STRING",
-          "value": "Applications"
-        },
-        {
-          "type": "STRING",
-          "value": "Logs"
-        },
-        {
-          "type": "STRING",
-          "value": "ApprovalProgramPages"
-        },
-        {
-          "type": "STRING",
-          "value": "ClearStateProgramPages"
         }
       ]
     },
@@ -3115,7 +2176,7 @@
         },
         {
           "type": "FIELD",
-          "name": "txna_field",
+          "name": "txn_array_field",
           "content": {
             "type": "SYMBOL",
             "name": "_txna_field"
@@ -3139,37 +2200,12 @@
           "value": "txnas"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -3181,37 +2217,12 @@
           "value": "itxnas"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -3231,37 +2242,12 @@
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -3281,37 +2267,12 @@
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -3323,37 +2284,12 @@
           "value": "gtxnsas"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         }
       ]
     },
@@ -3365,296 +2301,30 @@
           "value": "gtxn"
         },
         {
-          "type": "PATTERN",
-          "value": "\\d+"
+          "type": "SYMBOL",
+          "name": "numeric_argument"
         },
         {
           "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "Sender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Fee"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FirstValidTime"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastValid"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Note"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Lease"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Receiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Amount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CloseRemainderTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VotePK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "SelectionPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteFirst"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteLast"
-                },
-                {
-                  "type": "STRING",
-                  "value": "VoteKeyDilution"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Type"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TypeEnum"
-                },
-                {
-                  "type": "STRING",
-                  "value": "XferAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetAmount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetSender"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetReceiver"
-                },
-                {
-                  "type": "STRING",
-                  "value": "AssetCloseTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GroupIndex"
-                },
-                {
-                  "type": "STRING",
-                  "value": "TxID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "OnCompletion"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAppArgs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAccounts"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ApprovalProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ClearStateProgram"
-                },
-                {
-                  "type": "STRING",
-                  "value": "RekeyTo"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetTotal"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDecimals"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetDefaultFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetUnitName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetName"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetURL"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetMetadataHash"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetManager"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetReserve"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetFreeze"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ConfigAssetClawback"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAsset"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetAccount"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FreezeAssetFrozen"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumAssets"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApplications"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "GlobalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumUint"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LocalNumByteSlice"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ExtraProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Nonparticipation"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumLogs"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedAssetID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "CreatedApplicationID"
-                },
-                {
-                  "type": "STRING",
-                  "value": "LastLog"
-                },
-                {
-                  "type": "STRING",
-                  "value": "StateProofPK"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumApprovalProgramPages"
-                },
-                {
-                  "type": "STRING",
-                  "value": "NumClearStateProgramPages"
-                }
-              ]
+              "type": "FIELD",
+              "name": "txn_field",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_txn_field"
+              }
             },
             {
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "ApplicationArgs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Accounts"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Assets"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Applications"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "Logs"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ApprovalProgramPages"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "ClearStateProgramPages"
-                    }
-                  ]
+                  "type": "FIELD",
+                  "name": "txn_array_field",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_txna_field"
+                  }
                 },
                 {
                   "type": "FIELD",
@@ -3682,37 +2352,12 @@
           "name": "numeric_argument"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "ApplicationArgs"
-            },
-            {
-              "type": "STRING",
-              "value": "Accounts"
-            },
-            {
-              "type": "STRING",
-              "value": "Assets"
-            },
-            {
-              "type": "STRING",
-              "value": "Applications"
-            },
-            {
-              "type": "STRING",
-              "value": "Logs"
-            },
-            {
-              "type": "STRING",
-              "value": "ApprovalProgramPages"
-            },
-            {
-              "type": "STRING",
-              "value": "ClearStateProgramPages"
-            }
-          ]
+          "type": "FIELD",
+          "name": "txn_array_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_txna_field"
+          }
         },
         {
           "type": "FIELD",
@@ -3732,101 +2377,12 @@
           "value": "global"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "MinTxnFee"
-            },
-            {
-              "type": "STRING",
-              "value": "MinBalance"
-            },
-            {
-              "type": "STRING",
-              "value": "MaxTxnLife"
-            },
-            {
-              "type": "STRING",
-              "value": "ZeroAddress"
-            },
-            {
-              "type": "STRING",
-              "value": "GroupSize"
-            },
-            {
-              "type": "STRING",
-              "value": "LogicSigVersion"
-            },
-            {
-              "type": "STRING",
-              "value": "Round"
-            },
-            {
-              "type": "STRING",
-              "value": "LatestTimestamp"
-            },
-            {
-              "type": "STRING",
-              "value": "CurrentApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "CreatorAddress"
-            },
-            {
-              "type": "STRING",
-              "value": "CurrentApplicationAddress"
-            },
-            {
-              "type": "STRING",
-              "value": "GroupID"
-            },
-            {
-              "type": "STRING",
-              "value": "OpcodeBudget"
-            },
-            {
-              "type": "STRING",
-              "value": "CallerApplicationID"
-            },
-            {
-              "type": "STRING",
-              "value": "CallerApplicationAddress"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetCreateMinBalance"
-            },
-            {
-              "type": "STRING",
-              "value": "AssetOptInMinBalance"
-            },
-            {
-              "type": "STRING",
-              "value": "GenesisHash"
-            },
-            {
-              "type": "STRING",
-              "value": "PayoutsEnabled"
-            },
-            {
-              "type": "STRING",
-              "value": "PayoutsGoOnlineFee"
-            },
-            {
-              "type": "STRING",
-              "value": "PayoutsPercent"
-            },
-            {
-              "type": "STRING",
-              "value": "PayoutsMinBalance"
-            },
-            {
-              "type": "STRING",
-              "value": "PayoutsMaxBalance"
-            }
-          ]
+          "type": "FIELD",
+          "name": "global_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_global_field"
+          }
         }
       ]
     },
@@ -3868,49 +2424,12 @@
           "value": "block"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "BlkSeed"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkTimestamp"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkProposer"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkFeesCollected"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkBonus"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkBranch"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkFeeSink"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkProtocol"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkTxnCounter"
-            },
-            {
-              "type": "STRING",
-              "value": "BlkProposerPayout"
-            }
-          ]
+          "type": "FIELD",
+          "name": "block_field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_block_field"
+          }
         }
       ]
     }
