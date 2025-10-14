@@ -235,7 +235,9 @@ module.exports = grammar({
       field("version", NUMBER)
     ),
 
-    label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-]*/,
+    // label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-]*/,
+    label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-@\.]*/,
+    //TODO: check the actual regexp for identifier in the assembler in go algorand
 
     // Labels (e.g., start:)
     label: $ => seq(
@@ -374,7 +376,10 @@ module.exports = grammar({
 
     itxn_field_opcode: $ => seq(
       "itxn_field",
-      field("txn_field", $._txn_field),
+      choice(
+        field("txn_field", $._txn_field),
+        field("txn_array_field", $._txna_field)
+      )
     ),
 
     itxna_opcode: $ => seq(
