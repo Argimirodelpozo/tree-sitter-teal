@@ -1593,9 +1593,43 @@
     "type": "itxn_field_opcode",
     "named": true,
     "fields": {
+      "txn_array_field": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "Accounts",
+            "named": false
+          },
+          {
+            "type": "ApplicationArgs",
+            "named": false
+          },
+          {
+            "type": "Applications",
+            "named": false
+          },
+          {
+            "type": "ApprovalProgramPages",
+            "named": false
+          },
+          {
+            "type": "Assets",
+            "named": false
+          },
+          {
+            "type": "ClearStateProgramPages",
+            "named": false
+          },
+          {
+            "type": "Logs",
+            "named": false
+          }
+        ]
+      },
       "txn_field": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "Amount",
