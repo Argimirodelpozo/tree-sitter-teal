@@ -214,7 +214,7 @@
     },
     "numeric_argument": {
       "type": "PATTERN",
-      "value": "\\d+"
+      "value": "-?\\d+"
     },
     "string_argument": {
       "type": "PATTERN",
@@ -680,7 +680,7 @@
           "name": "version",
           "content": {
             "type": "PATTERN",
-            "value": "\\d+"
+            "value": "-?\\d+"
           }
         }
       ]

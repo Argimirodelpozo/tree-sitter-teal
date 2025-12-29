@@ -128,7 +128,7 @@ const BLOCK_FIELDS = [
 ];
 
 
-const NUMBER = /\d+/;
+const NUMBER = /-?\d+/;
 const STRING = /"[ -~]+"/;
 const HEX_BYTES = /0x[A-Fa-f0-9]*/;
 
