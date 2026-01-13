@@ -129,7 +129,7 @@ const BLOCK_FIELDS = [
 
 
 const NUMBER = /-?\d+/;
-const STRING = /"[ -~]+"/;
+const STRING = /"[ -~]*"/;
 const HEX_BYTES = /0x[A-Fa-f0-9]*/;
 
 module.exports = grammar({
