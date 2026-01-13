@@ -65,7 +65,7 @@ const SINGLE_NUMERIC_ARGUMENT_OPCODES = [
   "pushint",
   "frame_dig", "frame_bury",
   //pseudo-opcode but included for completeness
-  "int"
+  "int",
 ];
 
 const DOUBLE_NUMERIC_ARGUMENT_OPCODES = [
@@ -315,6 +315,11 @@ module.exports = grammar({
 
     pushbytess_opcode: $ => seq(
       "pushbytess",
+      repeat(choice($.numeric_argument, $.string_argument, $.hexbytes_argument))
+    ),
+
+    byte_pseudo_opcode: $ => seq(
+      "byte",
       repeat(choice($.numeric_argument, $.string_argument, $.hexbytes_argument))
     ),
 

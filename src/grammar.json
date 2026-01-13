@@ -1668,6 +1668,35 @@
         }
       ]
     },
+    "byte_pseudo_opcode": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "byte"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "numeric_argument"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "string_argument"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "hexbytes_argument"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "single_numeric_argument_opcode": {
       "type": "SEQ",
       "members": [
