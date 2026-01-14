@@ -24,7 +24,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "pragma_typechecking"
+          "name": "pragma_typetrack"
         },
         {
           "type": "SYMBOL",
@@ -689,7 +689,7 @@
         }
       ]
     },
-    "pragma_typechecking": {
+    "pragma_typetrack": {
       "type": "SEQ",
       "members": [
         {
@@ -698,7 +698,7 @@
         },
         {
           "type": "STRING",
-          "value": "typechecking"
+          "value": "typetrack"
         },
         {
           "type": "CHOICE",

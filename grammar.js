@@ -158,7 +158,7 @@ module.exports = grammar({
 
     _expression: $ => choice(
       $.pragma_version,
-      $.pragma_typechecking,
+      $.pragma_typetrack,
       $.label,
 
       //Generic rules to catch most cases
@@ -237,9 +237,9 @@ module.exports = grammar({
     ),
 
     // TEAL pragmas for typechecking (e.g., #pragma typechecking false)
-    pragma_typechecking: $ => seq(
+    pragma_typetrack: $ => seq(
       "#pragma",
-      "typechecking",
+      "typetrack",
       choice("true", "false")
     ),
 

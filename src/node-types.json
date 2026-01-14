@@ -2278,7 +2278,7 @@
     "fields": {}
   },
   {
-    "type": "pragma_typechecking",
+    "type": "pragma_typetrack",
     "named": true,
     "fields": {}
   },
@@ -2578,7 +2578,7 @@
           "named": true
         },
         {
-          "type": "pragma_typechecking",
+          "type": "pragma_typetrack",
           "named": true
         },
         {
@@ -4442,7 +4442,7 @@
     "named": false
   },
   {
-    "type": "typechecking",
+    "type": "typetrack",
     "named": false
   },
   {
