@@ -20,7 +20,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "pragma"
+          "name": "pragma_version"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pragma_typechecking"
         },
         {
           "type": "SYMBOL",
@@ -664,7 +668,7 @@
         ]
       }
     },
-    "pragma": {
+    "pragma_version": {
       "type": "SEQ",
       "members": [
         {
@@ -682,6 +686,32 @@
             "type": "PATTERN",
             "value": "-?\\d+"
           }
+        }
+      ]
+    },
+    "pragma_typechecking": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#pragma"
+        },
+        {
+          "type": "STRING",
+          "value": "typechecking"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "true"
+            },
+            {
+              "type": "STRING",
+              "value": "false"
+            }
+          ]
         }
       ]
     },

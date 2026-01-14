@@ -2278,7 +2278,12 @@
     "fields": {}
   },
   {
-    "type": "pragma",
+    "type": "pragma_typechecking",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "pragma_version",
     "named": true,
     "fields": {}
   },
@@ -2573,7 +2578,11 @@
           "named": true
         },
         {
-          "type": "pragma",
+          "type": "pragma_typechecking",
+          "named": true
+        },
+        {
+          "type": "pragma_version",
           "named": true
         },
         {
@@ -4117,6 +4126,10 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "frame_bury",
     "named": false
   },
@@ -4413,6 +4426,10 @@
     "named": false
   },
   {
+    "type": "true",
+    "named": false
+  },
+  {
     "type": "txn",
     "named": false
   },
@@ -4422,6 +4439,10 @@
   },
   {
     "type": "txnas",
+    "named": false
+  },
+  {
+    "type": "typechecking",
     "named": false
   },
   {

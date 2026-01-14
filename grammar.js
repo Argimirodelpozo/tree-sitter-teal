@@ -157,7 +157,8 @@ module.exports = grammar({
     source: ($) => seq(repeat($._expression)),
 
     _expression: $ => choice(
-      $.pragma,
+      $.pragma_version,
+      $.pragma_typechecking,
       $.label,
 
       //Generic rules to catch most cases
@@ -228,11 +229,18 @@ module.exports = grammar({
 
     comment: (_) => token(seq("\/\/", /(\\(.|\r?\n)|[^\\\n])*/)),
 
-    // TEAL pragmas (e.g., #pragma version 6)
-    pragma: $ => seq(
+    // TEAL pragmas for AVM version (e.g., #pragma version 6)
+    pragma_version: $ => seq(
       "#pragma",
       "version",
       field("version", NUMBER)
+    ),
+
+    // TEAL pragmas for typechecking (e.g., #pragma typechecking false)
+    pragma_typechecking: $ => seq(
+      "#pragma",
+      "typechecking",
+      choice("true", "false")
     ),
 
     // label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-]*/,
