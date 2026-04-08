@@ -3318,8 +3318,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '~', 57,
       );
       if (('-' <= lookahead && lookahead <= '9') ||
-          ('@' <= lookahead && lookahead <= 'Z') ||
-          lookahead == '_' ||
+          ('@' <= lookahead && lookahead <= '[') ||
+          (']' <= lookahead && lookahead <= '_') ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(24);
       END_STATE();
     case 24:
@@ -3327,7 +3327,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '-' ||
           lookahead == '.' ||
           ('0' <= lookahead && lookahead <= '9') ||
-          ('@' <= lookahead && lookahead <= 'Z') ||
+          ('@' <= lookahead && lookahead <= '[') ||
+          lookahead == ']' ||
           lookahead == '_' ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(24);
       END_STATE();

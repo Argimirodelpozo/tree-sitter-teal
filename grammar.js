@@ -244,7 +244,7 @@ module.exports = grammar({
     ),
 
     // label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-]*/,
-    label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-@\.]*/,
+    label_identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_\-@\.\[\]]*/,
     //TODO: check the actual regexp for identifier in the assembler in go algorand
 
     //TODO edge case: labels whose name is an opcode are allowed
