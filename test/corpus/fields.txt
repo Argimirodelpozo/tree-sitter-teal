@@ -1,0 +1,72 @@
+============================================================
+RejectVersion (AVM v12) on every txn-family read
+============================================================
+
+txn RejectVersion
+gtxn 0 RejectVersion
+gtxns RejectVersion
+itxn RejectVersion
+gitxn 1 RejectVersion
+itxn_field RejectVersion
+
+---
+
+(source
+  (txn_opcode)
+  (gtxn_opcode
+    (numeric_argument))
+  (gtxns_opcode)
+  (itxn_opcode)
+  (gitxn_opcode
+    (numeric_argument))
+  (itxn_field_opcode))
+
+============================================================
+AVM v12/v13 app_params fields
+============================================================
+
+app_params_get AppVersion
+app_params_get AppSizeSponsor
+app_params_get AppForeignBoxReads
+app_params_get AppFamilyBoxAccess
+
+---
+
+(source
+  (app_params_get_opcode)
+  (app_params_get_opcode)
+  (app_params_get_opcode)
+  (app_params_get_opcode))
+
+============================================================
+AVM v13 block fields
+============================================================
+
+block BlkBranch512
+block BlkSha512_256TxnCommitment
+block BlkSha256TxnCommitment
+block BlkSha512TxnCommitment
+
+---
+
+(source
+  (block_opcode)
+  (block_opcode)
+  (block_opcode)
+  (block_opcode))
+
+============================================================
+Unknown field is an error confined to its line
+============================================================
+
+txn NotAField
+int 1
+
+---
+
+(source
+  (ERROR)
+  (unknown_opcode
+    (label_identifier))
+  (single_numeric_argument_opcode
+    (numeric_argument)))

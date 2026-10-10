@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-teal
-        VERSION "0.1.0"
+        VERSION "0.2.0"
         DESCRIPTION "Tree sitter parser for the TEAL DSL (Algorand Virtual Machine assembly language)"
         HOMEPAGE_URL "https://github.com/tree-sitter/tree-sitter-teal"
         LANGUAGES C)

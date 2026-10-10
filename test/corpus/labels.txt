@@ -1,0 +1,124 @@
+============================================================
+Labels named like opcodes
+============================================================
+
+pop:
+concat:
+b:
+b pop
+b b
+match pop concat b
+
+---
+
+(source
+  (label)
+  (label)
+  (label)
+  (b_opcode
+    (label_identifier))
+  (b_opcode
+    (label_identifier))
+  (match_opcode
+    (label_identifier)
+    (label_identifier)
+    (label_identifier)))
+
+============================================================
+Puya route labels with @
+============================================================
+
+main_route@5:
+bz main_after_if_else@8
+
+---
+
+(source
+  (label)
+  (bz_opcode
+    (label_identifier)))
+
+============================================================
+TEALScript labels with *
+============================================================
+
+*addStake*return:
+b *addStake*return
+int 2
+int 3
+*
+
+---
+
+(source
+  (label)
+  (b_opcode
+    (label_identifier))
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))
+
+============================================================
+puya-sol path labels
+============================================================
+
+callsub /home/dev/Token.sol.transfer
+/home/dev/Token.sol.transfer:
+retsub
+
+---
+
+(source
+  (callsub_opcode
+    (label_identifier))
+  (label)
+  (zero_argument_opcode))
+
+============================================================
+puya-ts scoped labels
+============================================================
+
+callsub smart_contracts/main/contract.algo.ts::Main.cardAssetOptIn
+smart_contracts/main/contract.algo.ts::Main.cardAssetOptIn:
+proto 0 0
+
+---
+
+(source
+  (callsub_opcode
+    (label_identifier))
+  (label)
+  (double_numeric_argument_opcode
+    (numeric_argument)
+    (numeric_argument)))
+
+============================================================
+Bracketed and dotted labels
+============================================================
+
+a[0].b-c:
+b a[0].b-c
+
+---
+
+(source
+  (label)
+  (b_opcode
+    (label_identifier)))
+
+============================================================
+Label followed by an instruction on the same line
+============================================================
+
+main: int 1
+return
+
+---
+
+(source
+  (label)
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))

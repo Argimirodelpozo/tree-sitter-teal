@@ -1,0 +1,78 @@
+============================================================
+Template variables in constant pushes
+============================================================
+
+int TMPL_FEE
+pushint TMPL_X
+pushbytes TMPL_KEY
+byte TMPL_NAME
+addr TMPL_ADMIN
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (template_variable))
+  (single_numeric_argument_opcode
+    (template_variable))
+  (pushbytes_opcode
+    (template_variable))
+  (byte_pseudo_opcode
+    (template_variable))
+  (addr_pseudo_opcode
+    (template_variable)))
+
+============================================================
+Template variables in constant blocks
+============================================================
+
+intcblock 0 1 TMPL_A
+bytecblock "greeting" TMPL_GREETING 0x00
+pushints 1 TMPL_B
+pushbytess TMPL_C "x"
+
+---
+
+(source
+  (intcblock_opcode
+    (numeric_argument)
+    (numeric_argument)
+    (template_variable))
+  (bytecblock_opcode
+    (string_argument)
+    (template_variable)
+    (hexbytes_argument))
+  (pushints_opcode
+    (numeric_argument)
+    (template_variable))
+  (pushbytess_opcode
+    (template_variable)
+    (string_argument)))
+
+============================================================
+Template push with a trailing comment ends at its line
+============================================================
+
+pushint TMPL_X // TMPL_X
+int 1
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (template_variable))
+  (comment)
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+Custom template prefix
+============================================================
+
+int PRFX_ADMIN_ID
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (template_variable)))

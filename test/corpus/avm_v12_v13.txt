@@ -1,0 +1,76 @@
+============================================================
+falcon_verify (AVM v12)
+============================================================
+
+#pragma version 12
+falcon_verify
+
+---
+
+(source
+  (pragma_version)
+  (zero_argument_opcode))
+
+============================================================
+sha512 (AVM v13)
+============================================================
+
+sha512
+
+---
+
+(source
+  (zero_argument_opcode))
+
+============================================================
+app_box_* (AVM v13)
+============================================================
+
+app_box_create
+app_box_extract
+app_box_replace
+app_box_del
+app_box_len
+app_box_get
+app_box_put
+app_box_splice
+app_box_resize
+
+---
+
+(source
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (zero_argument_opcode))
+
+============================================================
+app_params_set (AVM v13)
+============================================================
+
+app_params_set AppForeignBoxReads
+app_params_set AppFamilyBoxAccess
+
+---
+
+(source
+  (app_params_set_opcode)
+  (app_params_set_opcode))
+
+============================================================
+poseidon2 (AVM v13)
+============================================================
+
+poseidon2 BN254t2
+poseidon2 BLS12_381t2
+
+---
+
+(source
+  (poseidon2_opcode)
+  (poseidon2_opcode))

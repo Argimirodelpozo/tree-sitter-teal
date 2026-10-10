@@ -1,0 +1,84 @@
+============================================================
+Named integer constants
+============================================================
+
+int pay
+int appl
+int NoOp
+int DeleteApplication
+int Payment
+int hb
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (named_integer_constant))
+  (single_numeric_argument_opcode
+    (named_integer_constant))
+  (single_numeric_argument_opcode
+    (named_integer_constant))
+  (single_numeric_argument_opcode
+    (named_integer_constant))
+  (single_numeric_argument_opcode
+    (named_integer_constant))
+  (single_numeric_argument_opcode
+    (named_integer_constant)))
+
+============================================================
+byte literal forms
+============================================================
+
+byte 0x0102
+byte "hi"
+byte base64(AQI=)
+byte b64 AQI=
+byte base32(AEBA)
+byte b32 AEBA
+
+---
+
+(source
+  (byte_pseudo_opcode
+    (hexbytes_argument))
+  (byte_pseudo_opcode
+    (string_argument))
+  (byte_pseudo_opcode
+    (base64_argument))
+  (byte_pseudo_opcode
+    (base64_argument))
+  (byte_pseudo_opcode
+    (base32_argument))
+  (byte_pseudo_opcode
+    (base32_argument)))
+
+============================================================
+addr and method
+============================================================
+
+addr AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY5HFKQ
+method "add(uint64,uint64)uint64"
+
+---
+
+(source
+  (addr_pseudo_opcode
+    (address_argument))
+  (method_pseudo_opcode
+    (string_argument)))
+
+============================================================
+Semicolon-separated instructions
+============================================================
+
+int 1; int 2
++
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))
