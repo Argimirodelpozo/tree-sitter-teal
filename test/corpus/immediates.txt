@@ -1,0 +1,105 @@
+============================================================
+itxna keeps its array index
+============================================================
+
+itxna Logs 1
+itxna ApplicationArgs 0
+
+---
+
+(source
+  (itxna_opcode
+    (numeric_argument))
+  (itxna_opcode
+    (numeric_argument)))
+
+============================================================
+itxn and gitxn txna sugar
+============================================================
+
+itxn Logs 0
+gitxn 0 Logs 2
+
+---
+
+(source
+  (itxn_opcode
+    (numeric_argument))
+  (gitxn_opcode
+    (numeric_argument)
+    (numeric_argument)))
+
+============================================================
+gaid keeps its group index
+============================================================
+
+gaid 5
+gaids
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))
+
+============================================================
+Immediate-less extract and replace pseudo-ops
+============================================================
+
+extract
+extract 1 2
+replace
+replace 3
+
+---
+
+(source
+  (zero_argument_opcode)
+  (double_numeric_argument_opcode
+    (numeric_argument)
+    (numeric_argument))
+  (zero_argument_opcode)
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+match and switch with no targets do not swallow the next line
+============================================================
+
+match
+int 1
+switch
+pop
+
+---
+
+(source
+  (match_opcode)
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (switch_opcode)
+  (zero_argument_opcode))
+
+============================================================
+match and switch with targets
+============================================================
+
+switch a b c
+match a
+a:
+b:
+c:
+
+---
+
+(source
+  (switch_opcode
+    (label_identifier)
+    (label_identifier)
+    (label_identifier))
+  (match_opcode
+    (label_identifier))
+  (label)
+  (label)
+  (label))

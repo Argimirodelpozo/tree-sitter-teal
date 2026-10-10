@@ -1,0 +1,99 @@
+============================================================
+Trailing comment is not part of the instruction
+============================================================
+
+int 1 // one
+b main // jump
+main:
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (comment)
+  (b_opcode
+    (label_identifier))
+  (comment)
+  (label))
+
+============================================================
+Quote inside a trailing comment does not extend a string
+============================================================
+
+pushbytes "asa_"   // [name, "asa_"]
+int 1
+
+---
+
+(source
+  (pushbytes_opcode
+    (string_argument))
+  (comment)
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+Trailing backslash does not continue a comment
+============================================================
+
+// self.x = y \
+bytec_3
+
+---
+
+(source
+  (comment)
+  (zero_argument_opcode))
+
+============================================================
+Double slash inside a base64 literal is not a comment
+============================================================
+
+byte b64 AA//==
+pushbytes base64(AA//)
+
+---
+
+(source
+  (byte_pseudo_opcode
+    (base64_argument))
+  (pushbytes_opcode
+    (base64_argument)))
+
+============================================================
+Comment-only and blank lines
+============================================================
+
+// header
+
+   
+// another
+int 1
+
+---
+
+(source
+  (comment)
+  (comment)
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+A quote after a backslash does not close a string (go-algorand tokenizer)
+============================================================
+
+pushbytess "a\\" "b"
+pushbytes "a\\"
+byte "a"//glued comment
+
+---
+
+(source
+  (pushbytess_opcode
+    (string_argument))
+  (pushbytes_opcode
+    (string_argument))
+  (byte_pseudo_opcode
+    (string_argument))
+  (comment))

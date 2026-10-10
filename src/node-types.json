@@ -5,7 +5,32 @@
     "fields": {}
   },
   {
+    "type": "addr_pseudo_opcode",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_argument",
+            "named": true
+          },
+          {
+            "type": "template_variable",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "app_params_get_opcode",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "app_params_set_opcode",
     "named": true,
     "fields": {}
   },
@@ -56,6 +81,10 @@
             "named": false
           },
           {
+            "type": "BlkBranch512",
+            "named": false
+          },
+          {
             "type": "BlkFeeSink",
             "named": false
           },
@@ -77,6 +106,18 @@
           },
           {
             "type": "BlkSeed",
+            "named": false
+          },
+          {
+            "type": "BlkSha256TxnCommitment",
+            "named": false
+          },
+          {
+            "type": "BlkSha512TxnCommitment",
+            "named": false
+          },
+          {
+            "type": "BlkSha512_256TxnCommitment",
             "named": false
           },
           {
@@ -107,13 +148,21 @@
     }
   },
   {
-    "type": "bytecblock_opcode",
+    "type": "byte_pseudo_opcode",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "base32_argument",
+          "named": true
+        },
+        {
+          "type": "base64_argument",
+          "named": true
+        },
         {
           "type": "hexbytes_argument",
           "named": true
@@ -124,6 +173,45 @@
         },
         {
           "type": "string_argument",
+          "named": true
+        },
+        {
+          "type": "template_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bytecblock_opcode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "base32_argument",
+          "named": true
+        },
+        {
+          "type": "base64_argument",
+          "named": true
+        },
+        {
+          "type": "hexbytes_argument",
+          "named": true
+        },
+        {
+          "type": "numeric_argument",
+          "named": true
+        },
+        {
+          "type": "string_argument",
+          "named": true
+        },
+        {
+          "type": "template_variable",
           "named": true
         }
       ]
@@ -271,9 +359,53 @@
     "type": "gitxn_opcode",
     "named": true,
     "fields": {
+      "array_index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
+      "txn_array_field": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "Accounts",
+            "named": false
+          },
+          {
+            "type": "ApplicationArgs",
+            "named": false
+          },
+          {
+            "type": "Applications",
+            "named": false
+          },
+          {
+            "type": "ApprovalProgramPages",
+            "named": false
+          },
+          {
+            "type": "Assets",
+            "named": false
+          },
+          {
+            "type": "ClearStateProgramPages",
+            "named": false
+          },
+          {
+            "type": "Logs",
+            "named": false
+          }
+        ]
+      },
       "txn_field": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "Amount",
@@ -469,6 +601,10 @@
           },
           {
             "type": "Receiver",
+            "named": false
+          },
+          {
+            "type": "RejectVersion",
             "named": false
           },
           {
@@ -996,6 +1132,10 @@
             "named": false
           },
           {
+            "type": "RejectVersion",
+            "named": false
+          },
+          {
             "type": "RekeyTo",
             "named": false
           },
@@ -1416,6 +1556,10 @@
             "named": false
           },
           {
+            "type": "RejectVersion",
+            "named": false
+          },
+          {
             "type": "RekeyTo",
             "named": false
           },
@@ -1583,6 +1727,10 @@
         "types": [
           {
             "type": "numeric_argument",
+            "named": true
+          },
+          {
+            "type": "template_variable",
             "named": true
           }
         ]
@@ -1828,6 +1976,10 @@
             "named": false
           },
           {
+            "type": "RejectVersion",
+            "named": false
+          },
+          {
             "type": "RekeyTo",
             "named": false
           },
@@ -1883,9 +2035,53 @@
     "type": "itxn_opcode",
     "named": true,
     "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
+      "txn_array_field": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "Accounts",
+            "named": false
+          },
+          {
+            "type": "ApplicationArgs",
+            "named": false
+          },
+          {
+            "type": "Applications",
+            "named": false
+          },
+          {
+            "type": "ApprovalProgramPages",
+            "named": false
+          },
+          {
+            "type": "Assets",
+            "named": false
+          },
+          {
+            "type": "ClearStateProgramPages",
+            "named": false
+          },
+          {
+            "type": "Logs",
+            "named": false
+          }
+        ]
+      },
       "txn_field": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "Amount",
@@ -2084,6 +2280,10 @@
             "named": false
           },
           {
+            "type": "RejectVersion",
+            "named": false
+          },
+          {
             "type": "RekeyTo",
             "named": false
           },
@@ -2139,6 +2339,16 @@
     "type": "itxna_opcode",
     "named": true,
     "fields": {
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "numeric_argument",
+            "named": true
+          }
+        ]
+      },
       "txn_array_field": {
         "multiple": false,
         "required": true,
@@ -2221,22 +2431,6 @@
     "fields": {}
   },
   {
-    "type": "label",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "label_identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "load_opcode",
     "named": true,
     "fields": {
@@ -2258,7 +2452,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "label_identifier",
@@ -2268,12 +2462,38 @@
     }
   },
   {
+    "type": "method_pseudo_opcode",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_argument",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "mimc_opcode",
     "named": true,
     "fields": {}
   },
   {
+    "type": "named_integer_constant",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "numeric_argument",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "poseidon2_opcode",
     "named": true,
     "fields": {}
   },
@@ -2296,6 +2516,14 @@
         "required": true,
         "types": [
           {
+            "type": "base32_argument",
+            "named": true
+          },
+          {
+            "type": "base64_argument",
+            "named": true
+          },
+          {
             "type": "hexbytes_argument",
             "named": true
           },
@@ -2305,6 +2533,10 @@
           },
           {
             "type": "string_argument",
+            "named": true
+          },
+          {
+            "type": "template_variable",
             "named": true
           }
         ]
@@ -2320,6 +2552,14 @@
       "required": false,
       "types": [
         {
+          "type": "base32_argument",
+          "named": true
+        },
+        {
+          "type": "base64_argument",
+          "named": true
+        },
+        {
           "type": "hexbytes_argument",
           "named": true
         },
@@ -2329,6 +2569,10 @@
         },
         {
           "type": "string_argument",
+          "named": true
+        },
+        {
+          "type": "template_variable",
           "named": true
         }
       ]
@@ -2344,6 +2588,10 @@
         "types": [
           {
             "type": "numeric_argument",
+            "named": true
+          },
+          {
+            "type": "template_variable",
             "named": true
           }
         ]
@@ -2391,6 +2639,10 @@
             "named": false
           },
           {
+            "type": "gaid",
+            "named": false
+          },
+          {
             "type": "gloads",
             "named": false
           },
@@ -2404,6 +2656,10 @@
           },
           {
             "type": "pushint",
+            "named": false
+          },
+          {
+            "type": "replace",
             "named": false
           },
           {
@@ -2421,7 +2677,15 @@
         "required": true,
         "types": [
           {
+            "type": "named_integer_constant",
+            "named": true
+          },
+          {
             "type": "numeric_argument",
+            "named": true
+          },
+          {
+            "type": "template_variable",
             "named": true
           }
         ]
@@ -2442,7 +2706,15 @@
           "named": true
         },
         {
+          "type": "addr_pseudo_opcode",
+          "named": true
+        },
+        {
           "type": "app_params_get_opcode",
+          "named": true
+        },
+        {
+          "type": "app_params_set_opcode",
           "named": true
         },
         {
@@ -2467,6 +2739,10 @@
         },
         {
           "type": "bnz_opcode",
+          "named": true
+        },
+        {
+          "type": "byte_pseudo_opcode",
           "named": true
         },
         {
@@ -2574,7 +2850,15 @@
           "named": true
         },
         {
+          "type": "method_pseudo_opcode",
+          "named": true
+        },
+        {
           "type": "mimc_opcode",
+          "named": true
+        },
+        {
+          "type": "poseidon2_opcode",
           "named": true
         },
         {
@@ -2622,6 +2906,10 @@
           "named": true
         },
         {
+          "type": "unknown_opcode",
+          "named": true
+        },
+        {
           "type": "voter_params_get_opcode",
           "named": true
         },
@@ -2658,7 +2946,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "label_identifier",
@@ -2916,6 +3204,10 @@
             "named": false
           },
           {
+            "type": "RejectVersion",
+            "named": false
+          },
+          {
             "type": "RekeyTo",
             "named": false
           },
@@ -3058,6 +3350,48 @@
     }
   },
   {
+    "type": "unknown_opcode",
+    "named": true,
+    "fields": {
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "label_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "hexbytes_argument",
+          "named": true
+        },
+        {
+          "type": "label_identifier",
+          "named": true
+        },
+        {
+          "type": "numeric_argument",
+          "named": true
+        },
+        {
+          "type": "string_argument",
+          "named": true
+        },
+        {
+          "type": "template_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "voter_params_get_opcode",
     "named": true,
     "fields": {}
@@ -3113,7 +3447,7 @@
     "named": false
   },
   {
-    "type": ":",
+    "type": ";",
     "named": false
   },
   {
@@ -3225,6 +3559,14 @@
     "named": false
   },
   {
+    "type": "AppFamilyBoxAccess",
+    "named": false
+  },
+  {
+    "type": "AppForeignBoxReads",
+    "named": false
+  },
+  {
     "type": "AppGlobalNumByteSlice",
     "named": false
   },
@@ -3241,7 +3583,19 @@
     "named": false
   },
   {
+    "type": "AppSizeSponsor",
+    "named": false
+  },
+  {
+    "type": "AppVersion",
+    "named": false
+  },
+  {
     "type": "ApplicationArgs",
+    "named": false
+  },
+  {
+    "type": "ApplicationCall",
     "named": false
   },
   {
@@ -3274,6 +3628,10 @@
   },
   {
     "type": "AssetCloseTo",
+    "named": false
+  },
+  {
+    "type": "AssetConfig",
     "named": false
   },
   {
@@ -3333,6 +3691,10 @@
     "named": false
   },
   {
+    "type": "AssetTransfer",
+    "named": false
+  },
+  {
     "type": "AssetURL",
     "named": false
   },
@@ -3357,6 +3719,10 @@
     "named": false
   },
   {
+    "type": "BLS12_381t2",
+    "named": false
+  },
+  {
     "type": "BN254Mp110",
     "named": false
   },
@@ -3369,11 +3735,19 @@
     "named": false
   },
   {
+    "type": "BN254t2",
+    "named": false
+  },
+  {
     "type": "BlkBonus",
     "named": false
   },
   {
     "type": "BlkBranch",
+    "named": false
+  },
+  {
+    "type": "BlkBranch512",
     "named": false
   },
   {
@@ -3401,6 +3775,18 @@
     "named": false
   },
   {
+    "type": "BlkSha256TxnCommitment",
+    "named": false
+  },
+  {
+    "type": "BlkSha512TxnCommitment",
+    "named": false
+  },
+  {
+    "type": "BlkSha512_256TxnCommitment",
+    "named": false
+  },
+  {
     "type": "BlkTimestamp",
     "named": false
   },
@@ -3417,11 +3803,19 @@
     "named": false
   },
   {
+    "type": "ClearState",
+    "named": false
+  },
+  {
     "type": "ClearStateProgram",
     "named": false
   },
   {
     "type": "ClearStateProgramPages",
+    "named": false
+  },
+  {
+    "type": "CloseOut",
     "named": false
   },
   {
@@ -3497,6 +3891,10 @@
     "named": false
   },
   {
+    "type": "DeleteApplication",
+    "named": false
+  },
+  {
     "type": "ExtraProgramPages",
     "named": false
   },
@@ -3561,6 +3959,10 @@
     "named": false
   },
   {
+    "type": "KeyRegistration",
+    "named": false
+  },
+  {
     "type": "LastLog",
     "named": false
   },
@@ -3602,6 +4004,10 @@
   },
   {
     "type": "MinTxnFee",
+    "named": false
+  },
+  {
+    "type": "NoOp",
     "named": false
   },
   {
@@ -3649,6 +4055,14 @@
     "named": false
   },
   {
+    "type": "OptIn",
+    "named": false
+  },
+  {
+    "type": "Payment",
+    "named": false
+  },
+  {
     "type": "PayoutsEnabled",
     "named": false
   },
@@ -3670,6 +4084,10 @@
   },
   {
     "type": "Receiver",
+    "named": false
+  },
+  {
+    "type": "RejectVersion",
     "named": false
   },
   {
@@ -3721,6 +4139,10 @@
     "named": false
   },
   {
+    "type": "UpdateApplication",
+    "named": false
+  },
+  {
     "type": "VoteFirst",
     "named": false
   },
@@ -3765,7 +4187,59 @@
     "named": false
   },
   {
+    "type": "acfg",
+    "named": false
+  },
+  {
+    "type": "addr",
+    "named": false
+  },
+  {
+    "type": "address_argument",
+    "named": true
+  },
+  {
     "type": "addw",
+    "named": false
+  },
+  {
+    "type": "afrz",
+    "named": false
+  },
+  {
+    "type": "app_box_create",
+    "named": false
+  },
+  {
+    "type": "app_box_del",
+    "named": false
+  },
+  {
+    "type": "app_box_extract",
+    "named": false
+  },
+  {
+    "type": "app_box_get",
+    "named": false
+  },
+  {
+    "type": "app_box_len",
+    "named": false
+  },
+  {
+    "type": "app_box_put",
+    "named": false
+  },
+  {
+    "type": "app_box_replace",
+    "named": false
+  },
+  {
+    "type": "app_box_resize",
+    "named": false
+  },
+  {
+    "type": "app_box_splice",
     "named": false
   },
   {
@@ -3809,6 +4283,14 @@
     "named": false
   },
   {
+    "type": "app_params_set",
+    "named": false
+  },
+  {
+    "type": "appl",
+    "named": false
+  },
+  {
     "type": "arg",
     "named": false
   },
@@ -3842,6 +4324,10 @@
   },
   {
     "type": "asset_params_get",
+    "named": false
+  },
+  {
+    "type": "axfer",
     "named": false
   },
   {
@@ -3905,6 +4391,14 @@
     "named": false
   },
   {
+    "type": "base32_argument",
+    "named": true
+  },
+  {
+    "type": "base64_argument",
+    "named": true
+  },
+  {
     "type": "base64_decode",
     "named": false
   },
@@ -3966,6 +4460,10 @@
   },
   {
     "type": "bury",
+    "named": false
+  },
+  {
+    "type": "byte",
     "named": false
   },
   {
@@ -4126,6 +4624,10 @@
     "named": false
   },
   {
+    "type": "falcon_verify",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
@@ -4206,6 +4708,10 @@
     "named": false
   },
   {
+    "type": "hb",
+    "named": false
+  },
+  {
     "type": "hexbytes_argument",
     "named": true
   },
@@ -4278,6 +4784,14 @@
     "named": false
   },
   {
+    "type": "keyreg",
+    "named": false
+  },
+  {
+    "type": "label",
+    "named": true
+  },
+  {
     "type": "label_identifier",
     "named": true
   },
@@ -4302,6 +4816,10 @@
     "named": false
   },
   {
+    "type": "method",
+    "named": false
+  },
+  {
     "type": "mimc",
     "named": false
   },
@@ -4318,11 +4836,19 @@
     "named": false
   },
   {
+    "type": "pay",
+    "named": false
+  },
+  {
     "type": "pop",
     "named": false
   },
   {
     "type": "popn",
+    "named": false
+  },
+  {
+    "type": "poseidon2",
     "named": false
   },
   {
@@ -4343,6 +4869,10 @@
   },
   {
     "type": "pushints",
+    "named": false
+  },
+  {
+    "type": "replace",
     "named": false
   },
   {
@@ -4382,6 +4912,10 @@
     "named": false
   },
   {
+    "type": "sha512",
+    "named": false
+  },
+  {
     "type": "sha512_256",
     "named": false
   },
@@ -4406,6 +4940,10 @@
     "named": false
   },
   {
+    "type": "stpf",
+    "named": false
+  },
+  {
     "type": "string_argument",
     "named": true
   },
@@ -4424,6 +4962,10 @@
   {
     "type": "switch",
     "named": false
+  },
+  {
+    "type": "template_variable",
+    "named": true
   },
   {
     "type": "true",
@@ -4447,6 +4989,10 @@
   },
   {
     "type": "uncover",
+    "named": false
+  },
+  {
+    "type": "unknown",
     "named": false
   },
   {

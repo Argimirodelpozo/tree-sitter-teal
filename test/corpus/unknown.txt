@@ -1,0 +1,17 @@
+============================================================
+Unknown opcode is an explicit node
+============================================================
+
+frobnicate 1 "x" foo
+int 1
+
+---
+
+(source
+  (unknown_opcode
+    (label_identifier)
+    (numeric_argument)
+    (string_argument)
+    (label_identifier))
+  (single_numeric_argument_opcode
+    (numeric_argument)))

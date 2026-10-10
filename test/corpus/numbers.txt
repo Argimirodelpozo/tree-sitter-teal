@@ -1,0 +1,66 @@
+============================================================
+Hexadecimal integer immediate
+============================================================
+
+int 0x10
+pushint 0xFF
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+Octal and binary integer immediates
+============================================================
+
+int 010
+int 0o17
+int 0b101
+
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+Underscore digit separators (TEALScript)
+============================================================
+
+intcblock 0 1 1_000_000 2_100_000
+int 1_000
+
+---
+
+(source
+  (intcblock_opcode
+    (numeric_argument)
+    (numeric_argument)
+    (numeric_argument)
+    (numeric_argument))
+  (single_numeric_argument_opcode
+    (numeric_argument)))
+
+============================================================
+Hex bytes are still bytes in byte contexts
+============================================================
+
+pushbytes 0x10
+bytecblock 0x01 0xff
+
+---
+
+(source
+  (pushbytes_opcode
+    (hexbytes_argument))
+  (bytecblock_opcode
+    (hexbytes_argument)
+    (hexbytes_argument)))

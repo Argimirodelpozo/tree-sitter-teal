@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-teal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tree sitter parser for the TEAL DSL (Algorand Virtual Machine assembly language)",
   "repository": "https://github.com/tree-sitter/tree-sitter-teal",
   "license": "MIT",
@@ -18,6 +18,7 @@
   "files": [
     "grammar.js",
     "tree-sitter.json",
+    "vocab/avm.json",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
@@ -45,6 +46,8 @@
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "test": "node --test bindings/node/*_test.js"
+    "test": "node --test bindings/node/*_test.js",
+    "check-spec": "node scripts/check_spec.js",
+    "gen-vocab": "node scripts/gen_vocab.js"
   }
 }

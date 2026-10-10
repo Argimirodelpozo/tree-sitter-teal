@@ -1,0 +1,58 @@
+============================================================
+Pragmas
+============================================================
+
+#pragma version 10
+#pragma typetrack false
+
+---
+
+(source
+  (pragma_version)
+  (pragma_typetrack))
+
+============================================================
+Small program
+============================================================
+
+#pragma version 8
+txn ApplicationID
+bz create
+txna ApplicationArgs 0
+byte 0x01
+==
+assert
+create:
+int 1
+return
+
+---
+
+(source
+  (pragma_version)
+  (txn_opcode)
+  (bz_opcode
+    (label_identifier))
+  (txna_opcode
+    (numeric_argument))
+  (byte_pseudo_opcode
+    (hexbytes_argument))
+  (zero_argument_opcode)
+  (zero_argument_opcode)
+  (label)
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))
+
+============================================================
+No trailing newline
+============================================================
+
+int 1
+return
+---
+
+(source
+  (single_numeric_argument_opcode
+    (numeric_argument))
+  (zero_argument_opcode))
